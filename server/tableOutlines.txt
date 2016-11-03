@@ -1,0 +1,68 @@
+E-commerce Tables
+///////////////////////////////////////////////////
+
+CREATE TABLE customers
+(
+customer_id SERIAL PRIMARY KEY,
+email varchar(50) NOT NULL UNIQUE,
+facebook_id varchar(50) NOT NULL,
+twitter_id varchar(50) NOT NULL,
+first_name varchar(50) NOT NULL,
+last_name varchar(50) NOT NULL,
+phone_number INT NOT NULL,
+mailing_street1 varchar(50) NOT NULL,
+mailing_street2 varchar(50) NOT NULL,
+mailing_city varchar(50) NOT NULL,
+mailing_zip varchar(50) NOT NULL,
+mailing_state varchar(2) NOT NULL,
+mailing_country varchar(50) NOT NULL,
+billing_street1 varchar(50) NOT NULL,
+billing_street2 varchar(50) NOT NULL,
+billing_city varchar(50) NOT NULL,
+billing_zip varchar(50) NOT NULL,
+billing_state varchar(2) NOT NULL,
+billing_country varchar(50) NOT NULL
+);
+
+//////////////////////////////////////////////////////
+
+CREATE TABLE product_categories
+(
+product_category_id SERIAL PRIMARY KEY,
+product_category_name varchar(50) NOT NULL
+);
+
+//////////////////////////////////////////////////////
+
+CREATE TABLE products
+(
+product_id SERIAL PRIMARY KEY,
+product_name varchar(50) NOT NULL,
+product_price DECIMAL NOT NULL,
+product_image varchar(50) NOT NULL,
+product_desc varchar(300) NOT NULL,
+product_category_id SERIAL REFERENCES product_categories
+);
+
+/////////////////////////////////////////////////////
+
+
+CREATE TABLE customer_orders
+(
+order_id SERIAL PRIMARY KEY,
+order_date TIMESTAMP NOT NULL,
+order_total_price DECIMAL NOT NULL,
+order_quantity INT NOT NULL,
+customer_id SERIAL REFERENCES customers
+);
+
+////////////////////////////////////////////////////
+
+CREATE TABLE order_details
+(
+od_id SERIAL PRIMARY KEY,
+product_id SERIAL REFERENCES products,
+od_product_quantity INT NOT NULL,
+order_id SERIAL REFERENCES orders,
+od_product_price DECIMAL NOT NULL
+);
