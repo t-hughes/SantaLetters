@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce_fullstack_devmnt",
+  "version": "1.0.0",
+  "description": "eCommerce Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-hughes/EcommerceFullStack.git"
+  },
+  "author": "Talon Hughes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/t-hughes/EcommerceFullStack/issues"
+  },
+  "homepage": "https://github.com/t-hughes/EcommerceFullStack#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "massive": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-twitter": "^1.0.4"
+  }
+}
