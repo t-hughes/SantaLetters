@@ -1,3 +1,3 @@
-app.service('mainSrv', () => {
-  
+app.service('mainSrv', function(){
+
 });
