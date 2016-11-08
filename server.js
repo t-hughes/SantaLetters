@@ -8,15 +8,20 @@ let express = require('express'),
     port = 2000;
 
 
+// TODO Need to setup OAuth for Facebook
 
 //Init Express
  let app = express();
+
+ //Controllers
+ let restCtrl = require('./controllers/restCtrl');
 
 //Middleware and Controllers
 app.use(bodyParser.json());
 app.use(cors());
 
-let restCtrl = require('./controllers/restCtrl');
+//Serving up Frontend files
+app.use(express.static(__dirname + '/public'));
 
 
 ////////ENDPOINTS////////

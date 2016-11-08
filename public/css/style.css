@@ -1,0 +1,242 @@
+/*General Styles */
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+    color: #f53f2c;
+    text-decoration: none;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+
+a:visited{
+    text-decoration: none
+}
+
+.highlight {color: #f53f2c;}
+h1 {font-size: 138px;}
+h2 {font-family: 'Pacifico', cursive;}
+h4 {font-weight: 600;}
+
+p {
+    font-size: 13px;
+    line-height: 1.7em;
+    color: #b2b2b2;
+}
+
+/* Buttons */
+.btn:focus {
+    outline: none !important;
+}
+
+.btn {
+    border-radius: 30px;
+    padding: 10px 40px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+
+.btn:focus {
+    background: #b73426;
+    color: #fff;
+    border: 2px solid #f53f2c;
+}
+
+.btn-default {
+    background: none;
+    color: #f53f2c;
+    border: 2.5px solid #f53f2c;
+}
+
+.btn-default:hover {
+    background: #f53f2c;
+    color: #fff;
+    border: 2px solid #b73426;
+}
+
+.btn-reverse {
+    border: 2.5px solid #fff;
+    color: #fff;
+    border-radius: 0;
+}
+
+.btn-reverse:hover {
+    color: #fff;
+    border-radius: 45px;
+}
+
+.btn-inverse {
+    background: #f53f2c;
+    color: #fff;
+    border: 2.5px solid #f53f2c;
+    margin-top: 0;
+}
+
+.btn-inverse:hover {
+    background: #b73426;
+    color: #fff;
+    border: 2.5px solid #f53f2c;
+}
+
+/* Input Fields */
+input {
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 2px solid #b2b2b2;
+    margin: 30px 5px;
+    color: #b2b2b2;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+
+input:focus {
+    border: 2px solid #f53f2c;
+}
+
+/* Section Headings */
+.sectionhead {padding: 0 150px;}
+.sectionhead h2 {padding-bottom: 10px;}
+
+.sectionhead p {
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+.sectionhead hr {
+    width: 75px;
+    border-bottom: 4px solid #eeeeee;
+}
+
+/* Main Section */
+#main {
+    text-align: center;
+    height: 560px;
+    color: #fff;
+    background: url(../img/slBackground.jpg) fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#main .container {padding-top: 70px;}
+
+#main h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: .8em;
+    text-shadow: 7px 9px 5px rgba(161, 19, 15, 0.294);
+}
+
+#main p {text-transform: uppercase;}
+
+#main p {
+    padding-top: 75px;
+    color: #fff;
+}
+
+.mistletoe {
+  margin-top: 80px;
+  width: 185px;
+}
+
+.home-santa {
+    float: right;
+    margin-top: -390px;
+}
+
+/* Overview Section */
+#overview {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.letter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.home-letters {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+/* Action Prompt Section */
+.action-prompt {
+    margin-top: 75px;
+    background: url(../img/slBackground.jpg) fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.action-prompt .content {
+  padding: 65px 0;
+}
+
+.action-prompt p {
+  color: #9f9f9f;
+}
+
+.action-prompt img {
+    margin-top: 50px;
+}
+
+/* Products Section */
+
+.productimg:hover {
+    opacity: .4;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+/* Email Subscription Section */
+/*#subscribe {
+    margin-top: 155px;
+    background: url(../img/slBackground.jpg) fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#subscribe .container {padding: 65px 0;}*/
+
+/* Footer */
+footer {padding: 75px 0 30px 0;}
+.logo {margin-top: -20px;}
+
+footer hr {
+    width: 75px;
+    border-bottom: 4px solid #eeeeee;
+}
+
+/* Overlays */
+.redoverlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 24, 0, 0.75);
+    position: relative;
+}
+
+.lightoverlay {
+    background-color: rgba(248, 248, 248, 0.9);
+    position: relative;
+}
+
+.darkoverlay {
+    background-color: rgba(54, 57, 66, 0.75);
+    position: relative;
+}

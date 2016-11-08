@@ -1,0 +1,60 @@
+<!--Home View-->
+
+<!-- Main Section -->
+<div id="main">
+    <div class="redoverlay">
+        <div class="container">
+            <div class="row">
+                <div class="herotext">
+                    <h2>HoHoHo, Merry Christmas</h2>
+                    <h1>It’s That Time</h1>
+                    <p>You better hurry...<br>Santa Clause is coming to town!<br>Receive a hand-written letter from Santa Clause!</p>
+                    <img class="mistletoe" src="img/mistletoe.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Main Section End-->
+
+<!--Home Product Overview-->
+<div id="overview" class="container">
+    <!--Sectionhead-->
+    <div class="sectionhead">
+        <h2> <span class="highlight">Featured</span> Letters</h2>
+        <p>Letters written from the man himself.</p>
+        <hr>
+    </div>
+<!--Home Product Overview End-->
+
+<!--Home Letter Packs Overview-->
+<div class="letter-container">
+            <div ng-repeat='product in products' ui-sref="product({id: product.product_id})">
+              <!-- TODO Need to figure out how to get the single, twin, and triple pack letters into the DB table and output the images here OR just display single letter and be able to change paper background. -->
+              <!-- <p>{{product.product_image}}</p><br> -->
+              <img class="home-letters productimg" src="img/singleLetter.jpg">
+              <p>{{product.product_name}}</p>
+              <p>{{product.product_price | currency}}</p>
+            </div>
+        </div>
+    </div>
+<!--Home Letter Packs Overview End-->
+
+    <!--Action Prompt Section -->
+    <div class="action-prompt">
+    <div class="lightoverlay">
+        <div class="container">
+            <div class="col-md-4">
+                <img src="img/deer.png" alt="">
+            </div>
+    <!--Action Prompt Section End-->
+
+            <div class="sectionhead content col-md-8">
+                <h2>Rudolph <span class="highlight"> is not waiting</span> any longer...</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                <!-- TODO Need to make it so start button goes to products view -->
+                <a href="" class="btn btn-default">Start Here</a>
+            </div><!--CALL-TO-ACTION CONTENT END-->
+        </div><!--CALL-TO-ACTION CONTAINER END-->
+    </div><!--CALL-TO-ACTION OVERLAY END-->
+</div><!--CALL-TO-ACTION END-->

@@ -2,13 +2,14 @@ var app = angular.module('santaLettersApp', ['ui.router']);
 
 app.config(function($urlRouterProvider, $stateProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
   $stateProvider
 
 //First page seen
   .state('home', {
-    url: '/',
-    templateUrl: 'views/home.html'
+    url: '/home',
+    templateUrl: 'views/home.html',
+    controller: 'homeCtrl'
   })
 
   .state('landing', {
@@ -18,7 +19,8 @@ app.config(function($urlRouterProvider, $stateProvider) {
 
   .state('products', {
     url: '/products',
-    templateUrl: 'views/products.html'
+    templateUrl: 'views/products.html',
+    controller: 'productsCtrl'
   })
 
   .state('letterTypes', {
