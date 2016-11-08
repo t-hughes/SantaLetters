@@ -31,6 +31,14 @@ p {
     color: #b2b2b2;
 }
 
+/*Header*/
+
+.sl-header {
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 50px;
+}
+
 /* Buttons */
 .btn:focus {
     outline: none !important;
@@ -108,8 +116,12 @@ input:focus {
 }
 
 /* Section Headings */
-.sectionhead {padding: 0 150px;}
-.sectionhead h2 {padding-bottom: 10px;}
+.sectionhead {
+  padding: 0 150px;
+}
+.sectionhead h2 {
+  padding-bottom: 10px;
+}
 
 .sectionhead p {
     font-size: 16px;
@@ -131,7 +143,9 @@ input:focus {
     background-repeat: no-repeat;
 }
 
-#main .container {padding-top: 70px;}
+#main .container {
+  padding-top: 70px;
+}
 
 #main h1 {
     font-weight: 800;
@@ -140,7 +154,9 @@ input:focus {
     text-shadow: 7px 9px 5px rgba(161, 19, 15, 0.294);
 }
 
-#main p {text-transform: uppercase;}
+#main p {
+  text-transform: uppercase;
+}
 
 #main p {
     padding-top: 75px;
