@@ -1,3 +1,3 @@
-app.controller('mainCtrl', function($scope, $state, mainSrv) {
+app.controller('mainCtrl', function($scope, $state, mainSrv){
 
 });

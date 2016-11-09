@@ -1,8 +1,6 @@
-app.controller('productsCtrl', function($scope, $state, productsSrv) {
+app.controller('productsCtrl', function($scope, $state, productsSrv, cartSrv) {
 
-var state = $state;
-
-  $scope.getProduct = productsSrv.getProduct(state.params.id)
+  $scope.getProduct = productsSrv.getProduct($state.params.id)
       .then(function(response) {
         $scope.productID = response.data;
       });
@@ -11,5 +9,10 @@ var state = $state;
     .then(function(response) {
       $scope.products = response.data;
   });
+
+  //Adds Product to Cart
+    $scope.addProductToCart = function(Item) {
+      $scope.cartStorage = cartSrv.cartStorage(Item);
+    };
 
 });

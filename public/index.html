@@ -8,6 +8,7 @@
         <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,600|Pacifico' rel='stylesheet' type='text/css'/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <!--CSS-->
         <link rel="stylesheet" href="css/responsive.css"/>
         <link rel="stylesheet" href="css/style.css"/>
@@ -37,6 +38,8 @@
               <li><a ui-sref="products">Products</a></li>
               <li><a ui-sref="about">About</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="userCart" role="button" aria-expanded="false">Cart <img src="img/sledCart.png"></a></li>
           </div><!--navbar-collapse -->
 </div><!--container-fluid-->
 </nav>
@@ -79,8 +82,10 @@
         <script src="js/controllers/letterCreateCtrl.js"></script>
         <script src="js/controllers/mainCtrl.js"></script>
         <script src="js/controllers/productsCtrl.js"></script>
+        <script src="js/controllers/cartCtrl.js"></script>
         <script src="js/services/homeSrv.js"></script>
         <script src="js/services/mainSrv.js"></script>
         <script src="js/services/productsSrv.js"></script>
+        <script src="js/services/cartSrv.js"></script>
     </body>
 </html>

@@ -1,5 +1,3 @@
 app.service('mainSrv', function(){
 
-
-
 });

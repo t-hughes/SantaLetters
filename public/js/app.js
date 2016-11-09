@@ -30,6 +30,17 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'productsCtrl'
   })
 
+  .state('userCart', {
+    url: '/userCart',
+    templateUrl: 'views/userCart.html',
+    controller: 'cartCtrl'
+  })
+
+  .state('userCheckout',{
+    url: 'userCheckout',
+    templateUrl: 'views/userCheckout.html'
+  })
+
   .state('about', {
     url: '/about',
     templateUrl: 'views/about.html'
