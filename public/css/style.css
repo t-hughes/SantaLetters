@@ -20,10 +20,19 @@ a:visited{
     text-decoration: none
 }
 
-.highlight {color: #f53f2c;}
-h1 {font-size: 138px;}
-h2 {font-family: 'Pacifico', cursive;}
-h4 {font-weight: 600;}
+.highlight {
+  color: #f53f2c;
+}
+
+h1 {
+  font-size: 138px;
+}
+h2 {
+  font-family: 'Pacifico', cursive;
+}
+h4 {
+  font-weight: 600;
+}
 
 p {
     font-size: 13px;
@@ -155,10 +164,7 @@ input:focus {
 }
 
 #main p {
-  text-transform: uppercase;
-}
-
-#main p {
+    text-transform: uppercase;
     padding-top: 75px;
     color: #fff;
 }
@@ -210,15 +216,28 @@ input:focus {
     margin-top: 50px;
 }
 
-/* Products Section */
+#letterTypes {
+  padding-top: 100px;
+}
 
-.productimg:hover {
+/* Products View */
+
+#products {
+  padding-top: 100px;
+}
+
+.product-img:hover {
     opacity: .4;
     -webkit-transition: .5s ease-out;
     -moz-transition: .5s ease-out;
     -o-transition: .5s ease-out;
     transition: .5s ease-out;
 }
+
+#product-detail{
+  padding-top: 100px;
+}
+
 /* Email Subscription Section */
 /*#subscribe {
     margin-top: 155px;

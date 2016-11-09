@@ -1,21 +1,18 @@
-<!-- TODO Need to make it so when user clicks on each product, it goes into single product page  -->
-
+<!-- TODO Need to make it so when user clicks on each product, it goes into single product page-->
 <div id="products" class="container">
   <div class="row moreitems">
-            <!--SMALL ITEM 1 START-->
-            <div class="col-md-6" ng-repeat="product in products" ui-sref="product({id: product.product_id})">
-                <!--SMALL PRODUCT IMAGE START-->
+            <div class="col-md-6" ng-repeat="product in products" ui-sref="productDetail({id: product.product_id})">
+                <!--List Product Image End-->
                 <div class="col-md-4 text-center">
-                    <a href="">
-                        <p class="productimg">{{product.product_image}}</p>
+                        <p class="product-img">{{product.product_image}}</p>
                     </a>
-                </div><!--PRODUCT IMAGE END-->
+                </div><!--List Product Image End-->
 
-                <!--SMALL PRODUCT DESCRIPTION START-->
+                <!--List Product Description-->
                 <div class="col-md-8">
-                    <h4><a href="">{{product.product_name}}</a></h4>
+                    <h4><a ui-sref="">{{product.product_name}}</a></h4>
                     <p>{{product.product_desc}}</p>
-                    <p class="price">US <span class="highlight">{{product.product_price}}</span></p>
-                </div><!--SMALL PRODUCT DESCRIPTION END-->
-            </div><!--SMALL ITEM 1 END-->
-    </div><!--Products Section End-->
+                    <p><span class="highlight">{{product.product_price | currency}}</span></p>
+                </div>
+            </div>
+    </div><!--List Product Section End-->

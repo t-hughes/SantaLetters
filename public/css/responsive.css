@@ -31,7 +31,7 @@
     .action-prompt img {
         margin-left: 0px;
     }
-    .productimg {
+    .product-img {
         margin-bottom: 20px;
     }
 }
@@ -128,9 +128,6 @@
     }
     .mistletoe {
         margin-top: -50px;
-    }
-    #products {
-        background: none;
     }
 }
 

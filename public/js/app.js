@@ -12,9 +12,10 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'homeCtrl'
   })
 
-  .state('landing', {
-    url: '/landing',
-    templateUrl: 'views/landing.html'
+  .state('letterTypes', {
+    url: '/letterTypes',
+    templateUrl: 'views/letterTypes.html',
+    controller: 'letterCreateCtrl'
   })
 
   .state('products', {
@@ -23,9 +24,10 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'productsCtrl'
   })
 
-  .state('letterTypes', {
-    url: '/letterTypes',
-    templateUrl: 'views/letterTypes.html'
+  .state('productDetail', {
+    url: '/product/:id',
+    templateUrl: 'views/productDetail.html',
+    controller: 'productsCtrl'
   })
 
   .state('about', {

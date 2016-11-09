@@ -5,7 +5,7 @@
     <div class="redoverlay">
         <div class="container">
             <div class="row">
-                <div class="herotext">
+                <div>
                     <h2>HoHoHo, Merry Christmas</h2>
                     <h1>It’s That Time</h1>
                     <p>You better hurry...<br>Santa Clause is coming to town!<br>Receive a hand-written letter from Santa Clause!</p>
@@ -28,16 +28,24 @@
 <!--Home Product Overview End-->
 
 <!--Home Letter Packs Overview-->
-<div class="letter-container">
-            <div ng-repeat='product in products' ui-sref="product({id: product.product_id})">
-              <!-- TODO Need to figure out how to get the single, twin, and triple pack letters into the DB table and output the images here OR just display single letter and be able to change paper background. -->
-              <!-- <p>{{product.product_image}}</p><br> -->
-              <img class="home-letters productimg" src="img/singleLetter.jpg">
-              <p>{{product.product_name}}</p>
-              <p>{{product.product_price | currency}}</p>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+        <img src="img/stockingGift.png" alt="">
+        <h4>complimentary Gift Included</h4>
+        <p>Each order will include a complimentary gift from Santa's little helpers.</p>
+    </div><!--ITEM END-->
+    <div class="col-md-6 col-lg-4">
+        <img src="img/snowmanHome.png" alt="">
+        <h4>Memories That Last</h4>
+        <p>Build memories that will last longer than the snowman built out front. Our letters are not only made to last, they will leave an imprint on your child's imagination for a lifetime.</p>
+    </div><!--ITEM END-->
+    <div class="col-md-6 col-lg-4">
+        <img src="img/deliverSleigh.png" alt="">
+        <h4>Free Worldwide Home Delivery</h4>
+        <p>Our quality hand-written letters are sent directly from The North Pole to your mailbox...for free!</p>
+    </div><!--ITEM END-->
+  </div>
+</div>
 <!--Home Letter Packs Overview End-->
 
     <!--Action Prompt Section -->
@@ -54,7 +62,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                 <!-- TODO Need to make it so start button goes to products view -->
                 <a href="" class="btn btn-default">Start Here</a>
-            </div><!--CALL-TO-ACTION CONTENT END-->
-        </div><!--CALL-TO-ACTION CONTAINER END-->
-    </div><!--CALL-TO-ACTION OVERLAY END-->
-</div><!--CALL-TO-ACTION END-->
+            </div><!--Action Prompt Content End-->
+        </div><!--Action Prompt Container End-->
+    </div><!--Action Prompt Overlay End-->
+</div><!--Action Prompt End-->
