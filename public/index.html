@@ -9,13 +9,14 @@
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,600|Pacifico' rel='stylesheet' type='text/css'/>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
         <!--CSS-->
         <link rel="stylesheet" href="css/responsive.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/responsive.css"/>
         <title>Santa Letters</title>
     </head>
-    <body ng-controller="mainCtrl">
+    <body ng-controller="cartCtrl">
 
         <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -28,7 +29,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ui-sref="home">Santa Letters</a>
+            <a class="navbar-brand" style="color: black" ui-sref="home">Santa <span class="highlight">Letters</span></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,7 +40,7 @@
               <li><a ui-sref="about">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a ui-sref="userCart" role="button" aria-expanded="false">Cart <img src="img/sledCart.png"></a></li>
+              <li><a ui-sref="userCart" role="button" aria-expanded="false"><img class="cart-img" src="img/sledCart.png"><span class="badge">{{cart.length}}</span></a></li>
           </div><!--navbar-collapse -->
 </div><!--container-fluid-->
 </nav>
@@ -52,13 +53,17 @@
         <!-- UI View End -->
 
         <!-- Footer -->
-        <!-- TODO link to facebook and twitter with icons-->
         <!-- TODO add copyright-->
         <footer class="container text-center">
             <h2 class="logo">Santa<span class="highlight">
                     Letters</span>
             </h2>
-            <p>footer footer footer footer ipsum</p>
+            <!-- NOTE Link Twitter and Instagram URLs if you have them or get rid of the icons. -->
+          <div>
+            <a href="https://www.facebook.com/SCLetters/" class="footer-icons"><i class="ion-social-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com" class="footer-icons"><i class="ion-social-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" class="footer-icons"><i class="ion-social-instagram"></i></a>
+          </div>
             <hr>
         </footer>
         <!--Footer End-->

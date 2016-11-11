@@ -18,4 +18,7 @@ app.service('cartSrv', function () {
     cart.splice($index, 1);
   };
 
+
+  // TODO add a bubble next to shopping cart that increments as items are added just count the array have controller count the arrayoutput with {{cart.length}}
+
 });

@@ -8,7 +8,7 @@ a {
 }
 
 a:hover {
-    color: #f53f2c;
+    color: #F53F2C;
     text-decoration: none;
     -webkit-transition: .5s ease-out;
     -moz-transition: .5s ease-out;
@@ -21,7 +21,7 @@ a:visited{
 }
 
 .highlight {
-  color: #f53f2c;
+  color: #F53F2C;
 }
 
 h1 {
@@ -37,7 +37,7 @@ h4 {
 p {
     font-size: 13px;
     line-height: 1.7em;
-    color: #b2b2b2;
+    color: #B2B2B2;
 }
 
 /* Overlays */
@@ -58,83 +58,6 @@ p {
     position: relative;
 }
 
-
-/* Buttons */
-.btn:focus {
-    outline: none !important;
-}
-
-.btn {
-    border-radius: 30px;
-    padding: 10px 40px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    -webkit-transition: .5s ease-out;
-    -moz-transition: .5s ease-out;
-    -o-transition: .5s ease-out;
-    transition: .5s ease-out;
-}
-
-.btn:focus {
-    background: #b73426;
-    color: #fff;
-    border: 2px solid #f53f2c;
-}
-
-.btn-default {
-    background: none;
-    color: #f53f2c;
-    border: 2.5px solid #f53f2c;
-}
-
-.btn-default:hover {
-    background: #f53f2c;
-    color: #fff;
-    border: 2px solid #b73426;
-}
-
-.btn-reverse {
-    border: 2.5px solid #fff;
-    color: #fff;
-    border-radius: 0;
-}
-
-.btn-reverse:hover {
-    color: #fff;
-    border-radius: 45px;
-}
-
-.btn-inverse {
-    background: #f53f2c;
-    color: #fff;
-    border: 2.5px solid #f53f2c;
-    margin-top: 0;
-}
-
-.btn-inverse:hover {
-    background: #b73426;
-    color: #fff;
-    border: 2.5px solid #f53f2c;
-}
-
-/* Input Fields */
-input {
-    padding: 10px 30px;
-    border-radius: 30px;
-    border: 2px solid #b2b2b2;
-    margin: 30px 5px;
-    color: #b2b2b2;
-    -webkit-transition: .5s ease-out;
-    -moz-transition: .5s ease-out;
-    -o-transition: .5s ease-out;
-    transition: .5s ease-out;
-}
-
-input:focus {
-    border: 2px solid #f53f2c;
-}
-
 /* Section Headings */
 .sectionhead {
   padding: 0 150px;
@@ -149,15 +72,33 @@ input:focus {
 }
 
 .sectionhead hr {
-    width: 75px;
-    border-bottom: 4px solid #eeeeee;
+    width: 100px;
+    border-bottom: 4px solid #EEE;
 }
 
+/*Navbar*/
+.badge {
+  background-color: #D9534F;
+  font-size: 12px;
+}
+
+.cart-img {
+  margin-bottom: -15px;
+  margin-right: -8px;
+  margin-top: -11px;
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+}
+
+/*Home View*/
 /* Main Section */
 #main {
     text-align: center;
     height: 560px;
-    color: #fff;
+    color: #FFF;
     background: url(../img/slBackground.jpg) fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -177,7 +118,7 @@ input:focus {
 #main p {
     text-transform: uppercase;
     padding-top: 75px;
-    color: #fff;
+    color: #FFF;
 }
 
 .mistletoe {
@@ -220,14 +161,40 @@ input:focus {
 }
 
 .action-prompt p {
-  color: #9f9f9f;
+  color: #9F9F9F;
 }
 
 .action-prompt img {
     margin-top: 50px;
 }
 
+.btn-home {
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/*Letter Types View*/
 #letterTypes {
+  padding-top: 100px;
+}
+
+.letterbtn-container {
+  margin-top: -260px;
+}
+
+.btn-letterType {
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/*Letter Form View*/
+#letterForm {
   padding-top: 100px;
 }
 
@@ -248,24 +215,49 @@ input:focus {
   padding-top: 100px;
 }
 
-/*Shopping Cart*/
+.btn-product-detail {
+  border-radius: 20px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/*Cart View*/
 #userCart {
   padding-top: 100px;
 }
 
-.table > tbody > tr > td, .table > tfoot > tr > td {
-    vertical-align: middle;
+.ion-trash-a {
+  font-size: 20px;
+}
+
+/*Checkout View*/
+#userCheckout {
+  padding-top: 100px;
+}
+
+/*About View*/
+#about {
+  padding-top: 100px;
 }
 
 /* Footer */
 footer {
-  padding: 75px 0 30px 0;
+  padding: 120px 0 30px 0;
 }
 .logo {
   margin-top: -20px;
 }
 
 footer hr {
-    width: 75px;
-    border-bottom: 4px solid #eeeeee;
+    width: 100px;
+    border-bottom: 4px solid #EEE;
+    margin-top: 5px;
+}
+
+.footer-icons {
+  font-size: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

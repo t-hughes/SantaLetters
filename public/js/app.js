@@ -18,6 +18,12 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'letterCreateCtrl'
   })
 
+  .state('letterForm', {
+    url: '/letterForm',
+    templateUrl: 'views/letterForm.html',
+    controller: 'letterCreateCtrl'
+  })
+
   .state('products', {
     url: '/products',
     templateUrl: 'views/products.html',
@@ -37,7 +43,7 @@ app.config(function($urlRouterProvider, $stateProvider) {
   })
 
   .state('userCheckout',{
-    url: 'userCheckout',
+    url: '/userCheckout',
     templateUrl: 'views/userCheckout.html'
   })
 

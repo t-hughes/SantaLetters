@@ -8,6 +8,18 @@ app.controller('cartCtrl', function ($scope, cartSrv) {
     cartSrv.removeProduct($index);
   };
 
+  $scope.subTotal = function() {
+    return $scope.cart.reduce(function(previous, current) {
+    return  +current.product_price + previous
+    }, 0);
+  };
 
+  $scope.taxCalc = function () {
+  return $scope.subTotal() * 0.0685;
+};
+
+  $scope.total = function() {
+    return $scope.subTotal() + $scope.taxCalc();
+  };
 
 });

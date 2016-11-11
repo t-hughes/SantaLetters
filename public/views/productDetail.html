@@ -12,8 +12,8 @@
 
                 <p>{{productID.product_desc}}</p>
 
-                <p><span class="highlight">{{productID.product_price | currency}}</span></p>
-                <a class="btn btn-default" ng-click="addProductToCart(productID)">Add To Cart</a>
+                <p><strong><span class="highlight">{{productID.product_price | currency}}</span></strong></p>
+                <a class="btn btn-danger btn-product-detail" ng-click="addProductToCart(productID)">Add To Cart</a>
             </div><!--Item Description End-->
         </div>
         <!-- Product End -->
