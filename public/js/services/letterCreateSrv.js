@@ -1,4 +1,4 @@
-app.service('productsSrv', function($http) {
+app.service('letterCreateSrv', function($http) {
 
     this.getAllProducts = function(id) {
         return $http({

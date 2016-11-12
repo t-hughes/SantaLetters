@@ -1,22 +1,110 @@
-<div id="letterTypes" class="container">
-      <div class="row">
-        <h3>Choose your letterhead</h3>
-        <div class="col-xs-2"w>
-          <img class="img-responsive" src="img/scLetterHead.jpg" ng-click="current='scLetterHead'" />
-          <img class="img-responsive" src="img/scLetterHead2.jpg"  ng-click="current='scLetterHead2'" />
+<div class="row">
+    <!-- Ornaments Header Pagination-->
+    <div id="the-wrap">
+        <!--- red ball--->
+        <div class="ball-wrapper">
+            <div class="string"></div>
+            <div class="ring"></div>
+            <div class="button"></div>
+            <div class="red-ball"></div>
         </div>
-        <div class="col-xs-2">
-          <img class="img-responsive" src="img/scLetterHead3.jpg" ng-click="current='scLetterHead3'"/>
-          <img class="img-responsive" src="img/scLetterHead4.jpg" ng-click="current='scLetterHead4'"/>
+        <!---- end of wrapper---->
+
+        <!---green ball---->
+        <div class="ball-wrapper">
+            <div class="string"></div>
+            <div class="ring"></div>
+            <div class="button"></div>
+            <div class="green-ball"></div>
         </div>
-        <div class="col-xs-6">
-          <img class="img-responsive" ng-src="img/{{current}}.jpg" />
+        <!---- end of wrapper---->
+
+        <!---blue ball--->
+        <div class="ball-wrapper">
+            <div class="string"></div>
+            <div class="ring"></div>
+            <div class="button"></div>
+            <div class="blue-ball"></div>
         </div>
+        <!---- end of wrapper---->
+
+        <!---white ball--->
+        <div class="ball-wrapper">
+            <div class="string"></div>
+            <div class="ring"></div>
+            <div class="button"></div>
+            <div class="white-ball"></div>
         </div>
-        <div class="row">
-          <div class="col-xs-4 letterbtn-container">
-            <a ui-sref="letterForm" class="btn btn-danger btn-block btn-letterType">Next <i class="ion-arrow-right-b"></i></a>
-          </div>
-      </div>
+        <!---- End of Wrapper---->
     </div>
-<!-- TODO Make a next button that takes user to form view to fill out letter and it types as it goes or make the letter they choose the actual form and they fill out certain parts that save to DB and then the letter is written and sent to user -->
+    <!-- End of Container -->
+</div>
+
+
+<!-- TODO Need to make it so when user clicks on each product, it goes into single product page-->
+<div id="products" class="container">
+  <div class="row moreitems">
+    <div class="row letter-workshop-header text-center">
+        <h2>Welcome to Santa's Letter Workshop!</h2>
+    </div>
+            <div class="col-md-6" ng-repeat="product in products">
+                <!--List Product Image End-->
+                <div class="col-md-4 text-center">
+                        <p class="product-img">{{product.product_image}}</p>
+                    </a>
+                </div><!--List Product Image End-->
+
+                <!--List Product Description-->
+                <div class="col-md-8">
+                    <h4>{{product.product_name}}</h4>
+                    <p>{{product.product_desc}}</p>
+                    <p><span class="highlight">{{product.product_price | currency}}</span></p>
+                    <a class="btn btn-danger btn-product-detail" ng-click="addProductToCart(product)">Add To Cart</a>
+                </div>
+            </div>
+    </div>
+  </div><!--List Product Section End-->
+
+
+<div id="letterTypes">
+    <section id="contact class" class="container content-section text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-responsive" src="img/scLetterHead.jpg" ng-click="current='scLetterHead'"/>
+                    <img class="img-responsive" src="img/scLetterHead2.jpg" ng-click="current='scLetterHead2'"/>
+                </div>
+                <div class="col-md-3">
+                    <img class="img-responsive" src="img/scLetterHead3.jpg" ng-click="current='scLetterHead3'"/>
+                    <img class="img-responsive" src="img/scLetterHead4.jpg" ng-click="current='scLetterHead4'"/>
+                </div>
+                <div class="col-md-6">
+                    <form id="responsiveForm" action="">
+                        <img class="img-responsive" ng-src="img/{{current}}.jpg"/>
+                        <div class="form-inner-cont">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion:</label>
+                            <input type="text" class="form-control" id="occasion" name="occasion"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="form-control btn btn-primary" value="go"/>
+                        </div>
+                      </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+</section>
+</div>

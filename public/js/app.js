@@ -1,4 +1,4 @@
-var app = angular.module('santaLettersApp', ['ui.router']);
+var app = angular.module('santaLettersApp', ['ui.router', 'ngAnimate']);
 
 app.config(function($urlRouterProvider, $stateProvider) {
 
@@ -18,22 +18,22 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'letterCreateCtrl'
   })
 
-  .state('letterForm', {
-    url: '/letterForm',
-    templateUrl: 'views/letterForm.html',
+  .state('clientDetails', {
+    url: '/clientDetails',
+    templateUrl: 'views/clientDetails.html',
     controller: 'letterCreateCtrl'
   })
 
   .state('products', {
     url: '/products',
     templateUrl: 'views/products.html',
-    controller: 'productsCtrl'
+    controller: 'letterCreateCtrl'
   })
 
   .state('productDetail', {
     url: '/product/:id',
     templateUrl: 'views/productDetail.html',
-    controller: 'productsCtrl'
+    controller: 'letterCreateCtrl'
   })
 
   .state('userCart', {

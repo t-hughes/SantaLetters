@@ -10,7 +10,7 @@ app.controller('cartCtrl', function ($scope, cartSrv) {
 
   $scope.subTotal = function() {
     return $scope.cart.reduce(function(previous, current) {
-    return  +current.product_price + previous
+    return  +current.product_price + previous;
     }, 0);
   };
 

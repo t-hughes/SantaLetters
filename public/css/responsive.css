@@ -34,6 +34,9 @@
     .product-img {
         margin-bottom: 20px;
     }
+    #the-wrap {
+      display: none;
+    }
 }
 
 /* Smaller Devices */
@@ -50,6 +53,9 @@
     }
     #main {
         height: 500px;
+    }
+    #the-wrap {
+      display: none;
     }
 }
 
@@ -84,6 +90,10 @@
         width: 85%;
         margin: 20px 0 0 0;
     }
+
+    #the-wrap {
+      display: none;
+    }
 }
 
 /* Smaller Mobile Devices */
@@ -113,6 +123,9 @@
     .logo {
         font-size: 28px;
     }
+    #the-wrap {
+      display: none;
+    }
 }
 
 /* Even Smaller Mobile Devices */
@@ -128,6 +141,9 @@
     }
     .mistletoe {
         margin-top: -50px;
+    }
+    #the-wrap {
+      display: none;
     }
 }
 
@@ -147,6 +163,9 @@
     }
     .mistletoe {
         margin-top: -30px;
+    }
+    #the-wrap {
+      display: none;
     }
 }
 
