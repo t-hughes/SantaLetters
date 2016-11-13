@@ -9,8 +9,6 @@
     <h3 class="form-header">Tell us about <span class="highlight">YOU</span>, not about the letter recipient</h3>
     <div class="underline">
     </div>
-    <div class="icon_wrapper">
-    </div>
     <form class="userDetails-form">
       <div class="name">
 
@@ -38,10 +36,8 @@
 
   <div id="container">
     <h1 class="form-header">&bull; Delivery &bull;</h1><br>
-    <h3 class="form-header">Where should <span class="highlight">Santa</span> send it?</h3>
+    <h3 class="form-header">Where should <span class="highlight">Santa</span> send the letter?</h3>
     <div class="underline">
-    </div>
-    <div class="icon_wrapper">
     </div>
     <!-- <form class="userDetails-form"> -->
       <div class="address">
@@ -64,7 +60,7 @@
 
         <input ng-model="customerData.mailing_zip" class="userDetails-input" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input" >
       </div>
-      <button ng-click="saveCustomerData(customerData)" ui-sref="letterTypes" class="snip1086 red" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
+      <button ng-click="saveCustomerData(customerData)" ui-sref="letterTypes" class="green" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
     </form><!-- // End form -->
   </div><!-- // End container-->
 </div>

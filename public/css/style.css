@@ -230,7 +230,6 @@ p {
 #container {
   border: solid 3px #474544;
   max-width: 768px;
-  position: relative;
   width: 100%;
   background: #F2F3EB;
   box-shadow: 5px 5px 5px #888888;
@@ -266,7 +265,7 @@ p {
   padding-top: 20px;
 }
 
-input[type='text'], [type='email'], select, textarea {
+input[type='text'], [type='email'] {
 	background: none;
   border: none;
 	border-bottom: solid 2px #474544;
@@ -290,19 +289,9 @@ input[type='text'], [type='email'], select, textarea {
 	transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+input[type='text']:focus, [type='email']:focus {
 	outline: none;
 	padding: 0 0 0.875em 0;
-}
-
-select {
-  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-select::-ms-expand {
-  display: none;
 }
 
 .name, .address {
@@ -333,7 +322,7 @@ select::-ms-expand {
 }
 
 /*Form Button*/
-button.snip1086 {
+button.green {
   font-family: 'Raleway', Arial, sans-serif;
   border: none;
   float: right;
@@ -353,7 +342,7 @@ button.snip1086 {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-button.snip1086 span {
+button.green span {
   display: inline-block;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -361,7 +350,7 @@ button.snip1086 span {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-button.snip1086 i {
+button.green i {
   font-size: 28px;
   text-align: center;
   width: 100%;
@@ -377,7 +366,7 @@ button.snip1086 i {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.snip1086:before {
+button.green:before {
   content: '';
   top: 0;
   left: 50%;
@@ -390,31 +379,31 @@ button.snip1086:before {
   -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
-button.snip1086:hover span,
-button.snip1086.hover span {
+button.green:hover span,
+button.green.hover span {
   opacity: 0;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.snip1086:hover i,
-button.snip1086.hover i {
+button.green:hover i,
+button.green.hover i {
   opacity: 1;
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
-button.snip1086:hover:before,
-button.snip1086.hover:before {
+button.green:hover:before,
+button.green.hover:before {
   left: 0;
   right: 0;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.snip1086:active:before {
+button.green:active:before {
   background: rgba(255, 255, 255, 0.3);
 }
 
-button.snip1086.red {
-  background-color: #D9534F;
+button.green {
+  background-color: #5CB85C;
 }
 
 /* Products View */
@@ -481,6 +470,12 @@ button.snip1086.red {
 /*Checkout View*/
 #userCheckout {
   padding-top: 100px;
+}
+
+.userCheckout-form {
+  padding: 37.5px;
+  margin: 50px 0;
+  background: #F2F3EB;
 }
 
 
