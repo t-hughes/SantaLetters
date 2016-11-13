@@ -219,8 +219,8 @@ p {
 /*//LETTER CREATION START*/
 /*///////////////////*/
 
-/*Client Details View*/
-#clientDetails {
+/*User Details View*/
+#userDetails {
   padding-top: 100px;
   display: flex;
   justify-content: space-around;
@@ -240,11 +240,11 @@ p {
   margin-right: 25px;
 }
 
-.clientDetails-input {
+.userDetails-input {
   line-height: normal;
 }
 
-.clientDetails-form {
+.userDetails-form {
   padding: 37.5px;
   margin: 50px 0;
   background: #F2F3EB;

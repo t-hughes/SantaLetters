@@ -33,6 +33,9 @@ module.exports = {
   update: (endpoint) => {
     return (request, response) => {
       db[endpoint].update(request.body, (dbError, dbResponse) => {
+        console.log(dbError);
+        console.log(dbResponse);
+
         if (dbError) { response.status(500).send(dbError); }
         else { response.status(201).send(dbResponse); }
       });

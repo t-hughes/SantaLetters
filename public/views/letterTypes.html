@@ -1,47 +1,7 @@
-<div class="row">
-    <!-- Ornaments Header Pagination-->
-    <div id="the-wrap">
-        <!--- red ball--->
-        <div class="ball-wrapper">
-            <div class="string"></div>
-            <div class="ring"></div>
-            <div class="button"></div>
-            <div class="red-ball"></div>
-        </div>
-        <!---- end of wrapper---->
+<!-- Ornament Header -->
+<div ng-include="'views/ornamentTemp.html'"></div>
 
-        <!---green ball---->
-        <div class="ball-wrapper">
-            <div class="string"></div>
-            <div class="ring"></div>
-            <div class="button"></div>
-            <div class="green-ball"></div>
-        </div>
-        <!---- end of wrapper---->
-
-        <!---blue ball--->
-        <div class="ball-wrapper">
-            <div class="string"></div>
-            <div class="ring"></div>
-            <div class="button"></div>
-            <div class="blue-ball"></div>
-        </div>
-        <!---- end of wrapper---->
-
-        <!---white ball--->
-        <div class="ball-wrapper">
-            <div class="string"></div>
-            <div class="ring"></div>
-            <div class="button"></div>
-            <div class="white-ball"></div>
-        </div>
-        <!---- End of Wrapper---->
-    </div>
-    <!-- End of Container -->
-</div>
-
-
-<!-- TODO Need to make it so when user clicks on each product, it goes into single product page-->
+<!-- TODO Line the images up 2x2 and give them a background and boxshadow -->
 <div id="products" class="container">
   <div class="row moreitems">
     <div class="row letter-workshop-header text-center">
@@ -50,8 +10,7 @@
             <div class="col-md-6" ng-repeat="product in products">
                 <!--List Product Image End-->
                 <div class="col-md-4 text-center">
-                        <p class="product-img">{{product.product_image}}</p>
-                    </a>
+                        <img class="product-img" ng-src="{{product.product_image}}">
                 </div><!--List Product Image End-->
 
                 <!--List Product Description-->
@@ -66,6 +25,7 @@
   </div><!--List Product Section End-->
 
 
+<!-- TODO Need to make it so when user clicks form button, it saves the letter head img and form data to DB and brings ths data and user to the letterApproval view-->
 <div id="letterTypes">
     <section id="contact class" class="container content-section text-center">
         <div class="container-fluid">
@@ -79,7 +39,7 @@
                     <img class="img-responsive" src="img/scLetterHead4.jpg" ng-click="current='scLetterHead4'"/>
                 </div>
                 <div class="col-md-6">
-                    <form id="responsiveForm" action="">
+                    <form id="responsiveForm">
                         <img class="img-responsive" ng-src="img/{{current}}.jpg"/>
                         <div class="form-inner-cont">
                         <div class="form-group">

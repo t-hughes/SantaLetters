@@ -1,3 +1,7 @@
+<!-- Ornament Header -->
+<div ng-include="'views/ornamentTemp.html'"></div>
+
+<!-- Cart -->
 <div id="userCart" class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -15,7 +19,7 @@
                     <tr ng-repeat="cartItem in cart track by $index">
                         <td class="col-sm-8 col-md-6">
                             <div class="media">
-                                <img class="img-responsive pull-left" src="http://research.com.pk/fmri/wp-content/uploads/2013/09/photography-stack-of-letters2a1.jpg">
+                                <img class="img-responsive pull-left" ng-src="{{product.product_image}}">
                                 <div class="media-body">
                                     <h4 class="media-heading">{{cartItem.product_name}}</h4>
                                 </div>
@@ -80,9 +84,9 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a ui-sref="products" class="btn btn-danger">
+                            <a ui-sref="letterReview" class="btn btn-danger">
                                 <i class="ion-arrow-left-b"></i>
-                                Continue Shopping</a>
+                                Back to Letter Approval</a>
                         </td>
                         <td>
                             <a ui-sref="userCheckout" class="btn btn-success">Checkout

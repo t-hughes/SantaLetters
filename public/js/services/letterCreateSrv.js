@@ -14,4 +14,29 @@ app.service('letterCreateSrv', function($http) {
         });
       };
 
+//Saving customer name, email, PH#, mailing streets, city, state, zip and storing it in the array until it posts to the DB.
+    var customerData = [];
+
+    this.createCustomer = function() {
+      return customerData;
+    };
+
+    this.saveCustomerData = function(data) {
+      customerData.push(data);
+      console.log(customerData);
+    };
+
+//Sends all customer data to DB
+    this.createFinalCustomer = function() {
+      var finalCustomer = customerData.reduce(function(result, currentObject) {
+        for(var key in currentObject) {
+          if(currentObject.hasOwnProperty(key)) {
+            result[key] = currentObject[key];
+          }
+        }
+        return result;
+      }, {});
+      console.log(finalCustomer);
+    };
+
 });

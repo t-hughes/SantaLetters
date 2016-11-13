@@ -12,27 +12,21 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'homeCtrl'
   })
 
+  .state('userDetails', {
+    url: '/userDetails',
+    templateUrl: 'views/userDetails.html',
+    controller: 'letterCreateCtrl'
+  })
+
   .state('letterTypes', {
     url: '/letterTypes',
     templateUrl: 'views/letterTypes.html',
     controller: 'letterCreateCtrl'
   })
 
-  .state('clientDetails', {
-    url: '/clientDetails',
-    templateUrl: 'views/clientDetails.html',
-    controller: 'letterCreateCtrl'
-  })
-
-  .state('products', {
-    url: '/products',
-    templateUrl: 'views/products.html',
-    controller: 'letterCreateCtrl'
-  })
-
-  .state('productDetail', {
-    url: '/product/:id',
-    templateUrl: 'views/productDetail.html',
+  .state('letterApproval', {
+    url: '/letterApproval',
+    templateUrl: 'views/letterApproval.html',
     controller: 'letterCreateCtrl'
   })
 
@@ -44,7 +38,8 @@ app.config(function($urlRouterProvider, $stateProvider) {
 
   .state('userCheckout',{
     url: '/userCheckout',
-    templateUrl: 'views/userCheckout.html'
+    templateUrl: 'views/userCheckout.html',
+    controller: 'letterCreateCtrl'
   })
 
   .state('about', {

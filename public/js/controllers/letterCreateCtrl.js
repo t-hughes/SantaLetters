@@ -20,6 +20,7 @@ $scope.current = 'scLetterHead';
     $scope.addProductToCart = function(Item) {
       $scope.cartStorage = cartSrv.cartStorage(Item);
 
+// Alert when something is added to the cart
       swal({
         type: 'success',
         title: Item.product_name + ' was added to your cart!',
@@ -28,4 +29,15 @@ $scope.current = 'scLetterHead';
       });
     };
 
+//User Deets and Delivery Form Info Sending to DB
+
+$scope.saveCustomerData = function(data) {
+  console.log(data);
+  letterCreateSrv.saveCustomerData(data);
+};
+
+$scope.saveFinalCustomer = function (data){
+  $scope.saveCustomerData(data);
+  letterCreateSrv.createFinalCustomer();
+};
 });

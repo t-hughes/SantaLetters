@@ -1,3 +1,71 @@
+<!-- Ornament Header -->
+<div ng-include="'views/ornamentTemp.html'"></div>
+
+
+
+<!-- TODO Add final order details -->
+<!-- TODO Accept CC payment -->
+<!-- TODO Accept Paypal -->
+<!-- TODO Implement Stripe? -->
+
+
 <div id="userCheckout" class="container">
-<p> test</p>
+  <form class="form-horizontal">
+  <div class="row">
+
+                      <!--SHIPPING METHOD-->
+                      <div class="panel panel-info">
+                          <div class="panel-heading">Address</div>
+                          <div class="panel-body">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <h4>Billing Address</h4>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>Address 1:</strong></div>
+                                  <div class="col-md-12">
+                                      <input ng-model="customerData.billing_street1" type="text" name="address" class="form-control" value="" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>Address 2:</strong></div>
+                                  <div class="col-md-12">
+                                      <input ng-model="customerData.billing_street2" type="text" name="address" class="form-control" value="" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>City:</strong></div>
+                                  <div class="col-md-12">
+                                      <input ng-model="customerData.billing_city" type="text" name="city" class="form-control" value="" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>State:</strong></div>
+                                  <div class="col-md-12">
+                                      <input ng-model="customerData.billing_state"  type="text" name="state" class="form-control" value="" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                                  <div class="col-md-12">
+                                      <input ng-model="customerData.billing_zip" type="text" name="zip_code" class="form-control" value="" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>Phone Number:</strong></div>
+                                  <div class="col-md-12"><input ng-model="customerData.phone_number"  type="text" name="phone_number" class="form-control" value="" /></div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-md-12"><strong>Email Address:</strong></div>
+                                  <div class="col-md-12"><input ng-model="customerData.email"  type="text" name="email_address" class="form-control" value="" /></div>
+                              </div>
+                              <button ng-click="saveFinalCustomer(customerData)" class="snip1086 red" type="submit"><span>Next</span><i class="ion-arrow-right-c"></i></button>
+                          </div>
+                      </div>
+                    </form>
+                      <!--SHIPPING METHOD END-->
+                      <pre>{{customerData}}</pre>
+</div>
 </div>
