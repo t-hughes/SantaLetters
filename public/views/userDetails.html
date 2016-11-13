@@ -46,11 +46,11 @@
     <!-- <form class="userDetails-form"> -->
       <div class="address">
 
-        <input ng-model="customerData.mailing_street1" class="userDetails-input" type="text" placeholder="Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address 1'" name="address1" id="address_input" >
+        <input ng-model="customerData.mailing_adress1" class="userDetails-input" type="text" placeholder="Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address 1'" name="address1" id="address_input" >
       </div>
       <div class="address">
 
-        <input ng-model="customerData.mailing_street2" class="userDetails-input" type="text" placeholder="Address 2 (Apt, Ste, Lot, etc.)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address 2 (Apt, Ste, Lot, etc.)'" name="address2" id="address_input" >
+        <input ng-model="customerData.mailing_adress2" class="userDetails-input" type="text" placeholder="Address 2 (Apt, Ste, Lot, etc.)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address 2 (Apt, Ste, Lot, etc.)'" name="address2" id="address_input" >
       </div>
       <div class="address">
 
@@ -66,7 +66,5 @@
       </div>
       <button ng-click="saveCustomerData(customerData)" ui-sref="letterTypes" class="snip1086 red" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
     </form><!-- // End form -->
-  </div><!-- // End #container-->
+  </div><!-- // End container-->
 </div>
-
-<pre>{{customerData}}</pre>

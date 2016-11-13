@@ -36,7 +36,12 @@ app.service('letterCreateSrv', function($http) {
         }
         return result;
       }, {});
-      console.log(finalCustomer);
+      // return $http({
+      //   method: 'POST',
+      //   url: 'http://localhost:2000/api/customers',
+      //   data: 'finalCustomer'
+      // });
+      // console.log(finalCustomer);
     };
 
 });
