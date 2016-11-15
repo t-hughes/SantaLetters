@@ -34,7 +34,7 @@
     .product-img {
         margin-bottom: 20px;
     }
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }
@@ -54,7 +54,7 @@
     #main {
         height: 500px;
     }
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }
@@ -91,7 +91,7 @@
         margin: 20px 0 0 0;
     }
 
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }
@@ -123,7 +123,7 @@
     .logo {
         font-size: 28px;
     }
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }
@@ -142,7 +142,7 @@
     .mistletoe {
         margin-top: -50px;
     }
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }
@@ -164,7 +164,7 @@
     .mistletoe {
         margin-top: -30px;
     }
-    #the-wrap {
+    #ornament-wrapper {
       display: none;
     }
 }

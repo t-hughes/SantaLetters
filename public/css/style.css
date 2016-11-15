@@ -114,16 +114,16 @@ p {
 .badge {
   background-color: #D9534F;
   font-size: 12px;
+  font-weight: 600;
 }
 
 .cart-img {
   margin-bottom: -15px;
-  margin-right: -8px;
   margin-top: -11px;
 }
 
-.cart-width {
-  width: 91px;
+.cartimg-width{
+  width: 107px;
 }
 
 .navbar-brand {
@@ -231,7 +231,6 @@ p {
   border: solid 3px #474544;
   max-width: 768px;
   width: 100%;
-  background: #F2F3EB;
   box-shadow: 5px 5px 5px #888888;
 }
 
@@ -246,7 +245,6 @@ p {
 .userDetails-form {
   padding: 37.5px;
   margin: 50px 0;
-  background: #F2F3EB;
 }
 
 .form-header {
@@ -265,12 +263,12 @@ p {
   padding-top: 20px;
 }
 
-input[type='text'], [type='email'] {
+input[type='text'], [type='email'], select {
 	background: none;
   border: none;
 	border-bottom: solid 2px #474544;
 	color: #474544;
-	font-size: 1.000em;
+	font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
 	margin: 0em 0 1.875em 0;
@@ -289,7 +287,7 @@ input[type='text'], [type='email'] {
 	transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus {
+input[type='text']:focus, [type='email']:focus, select:focus {
 	outline: none;
 	padding: 0 0 0.875em 0;
 }
@@ -334,7 +332,7 @@ button.green {
   margin: 15px 30px;
   text-transform: uppercase;
   line-height: 1.5em;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1em;
   outline: none;
   position: relative;
@@ -403,7 +401,7 @@ button.green:active:before {
 }
 
 button.green {
-  background-color: #5CB85C;
+  background-color: #9CD6AC;
 }
 
 /* Products View */
@@ -435,16 +433,55 @@ button.green {
   font-size: 12px;
 }
 
+/*Santa Question Form*/
+#santaQ-container {
+  border: solid 3px #474544;
+  margin-left: 50px;
+  margin-top: 100px;
+  max-width: 825px;
+  width: 85%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.letter-live {
+  width: 720px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.inner-content {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  padding: 75px;
+  padding-top: 175px;
+}
+
+.content-letter {
+  color: #000;
+}
+
 /*Letter Types View*/
 #letterTypes {
   padding-top: 100px;
 }
 
+
+
 .letter-workshop-header {
   padding-bottom: 50px;
 }
 
-#responsiveForm {
+/*#responsiveForm {
   position: relative;
 }
 
@@ -452,10 +489,9 @@ button.green {
   position: absolute;
   z-index: 10;
   top: 0;
-  /*left: 0;*/
   padding: 80px;
   padding-top: 120px;
-}
+}*/
 
 
 /*Cart View*/
@@ -475,7 +511,6 @@ button.green {
 .userCheckout-form {
   padding: 37.5px;
   margin: 50px 0;
-  background: #F2F3EB;
 }
 
 
@@ -507,16 +542,10 @@ footer hr {
 }
 
 /*Ornaments Pagination*/
-#the-wrap{
-  width: 100%;
+#ornament-wrapper{
   margin-top: 50px;
 }
 
-.ball-wrapper{
-  float: left;
-  margin: 0px 160px;
-
-}
 .ring{
   height:15px;
   width: 5px;
@@ -548,7 +577,7 @@ footer hr {
 }
 
 .red-ball {
-  background-color: #6b2f36;
+  background-color: #D9534F;
   border-radius: 50%;
   height: 150px;
   width: 150px;
@@ -564,21 +593,3 @@ footer hr {
   position: relative;
   left: 3px;
   }
-
-.blue-ball{
- background-color: #475479;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  position: relative;
-  left: 3px;
-}
-
-.white-ball{
- background-color: #D9534F;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  position: relative;
-  left: 3px;
-}

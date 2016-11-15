@@ -39,7 +39,7 @@
     <h3 class="form-header">Where should <span class="highlight">Santa</span> send the letter?</h3>
     <div class="underline">
     </div>
-    <!-- <form class="userDetails-form"> -->
+    <div class="userDetails-form">
       <div class="address">
 
         <input ng-model="customerData.mailing_adress1" class="userDetails-input" type="text" placeholder="Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address 1'" name="address1" id="address_input" >
@@ -61,6 +61,7 @@
         <input ng-model="customerData.mailing_zip" class="userDetails-input" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input" >
       </div>
       <button ng-click="saveCustomerData(customerData)" ui-sref="letterTypes" class="green" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
+    </div>
     </form><!-- // End form -->
   </div><!-- // End container-->
 </div>

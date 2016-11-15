@@ -21,15 +21,15 @@ $scope.current = 'scLetterHead';
       $scope.cartStorage = cartSrv.cartStorage(Item);
 
 // Alert when something is added to the cart
-      swal({
-        type: 'success',
-        title: Item.product_name + ' was added to your cart!',
-        confirmButtonColor: '#D9534F',
-        confirmButtonText: 'Okay'
-      });
+      // swal({
+      //   type: 'success',
+      //   title: Item.product_name + ' was added to your cart!',
+      //   confirmButtonColor: '#D9534F',
+      //   confirmButtonText: 'Okay'
+      // });
     };
 
-//User Deets and Delivery Form Info Sending to DB
+//User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
 
 $scope.saveCustomerData = function(data) {
   console.log(data);
@@ -40,4 +40,7 @@ $scope.saveFinalCustomer = function (data){
   $scope.saveCustomerData(data);
   letterCreateSrv.createFinalCustomer();
 };
+
+
+
 });

@@ -3,45 +3,214 @@
 
 <!-- TODO Line the images up 2x2 and give them a background and boxshadow -->
 <div id="products" class="container">
-  <div class="row moreitems">
     <div class="row letter-workshop-header text-center">
-        <h2>Welcome to Santa's Letter Workshop!</h2>
+        <h2>Welcome To The Letter Workshop!</h2>
     </div>
-            <div class="col-md-6" ng-repeat="product in products">
-                <!--List Product Image End-->
-                <div class="col-md-4 text-center">
-                        <img class="product-img" ng-src="{{product.product_image}}">
-                </div><!--List Product Image End-->
 
-                <!--List Product Description-->
-                <div class="col-md-8">
-                    <h4>{{product.product_name}}</h4>
-                    <p>{{product.product_desc}}</p>
-                    <p><span class="highlight">{{product.product_price | currency}}</span></p>
-                    <a class="btn btn-danger btn-product-detail" ng-click="addProductToCart(product)">Add To Cart</a>
-                </div>
+    <div class="col-md-6" ng-repeat="product in products">
+        <!--List Product Image End-->
+        <div class="col-md-4 text-center">
+            <img class="product-img" ng-src="{{product.product_image}}">
+        </div>
+        <!-- List Product Image End -->
+
+        <!--List Product Description-->
+        <div class="col-md-8">
+            <h4>{{product.product_name}}</h4>
+            <p>{{product.product_desc}}</p>
+            <p>
+                <span class="highlight">{{product.product_price | currency}}</span>
+            </p>
+            <a class="btn btn-danger btn-product-detail" ng-click="addProductToCart(product)">Add To Cart</a>
+        </div>
+    </div>
+</div>
+<!--List Product Section End-->
+
+<div class="row">
+    <div class="col-md-6">
+        <div id="santaQ-container">
+            <h1 class="form-header">&bull; Personalization &bull;</h1><br>
+            <h3 class="form-header">Answer the following questions so<span class="highlight">
+                    Santa</span>
+                can personalize your letter!</h3>
+            <div class="underline"></div>
+
+            <div class="userDetails-form">
+
+                <input type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="address1">
+
+                <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="address2">
+
+                <input type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="city">
+
+                <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="">
+
+                <input type="text" placeholder="Childs Gender" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Gender'" name="">
+
+                <select name="field_age">
+                    <option value="" disabled hidden selected>Childs Age</option>
+                    <option value="<1">Newborn to 12 months old</option>
+                    <option value="1">1 year old</option>
+                    <option value="2">2 years old</option>
+                    <option value="3">3 years old</option>
+                    <option value="4">4 years old</option>
+                    <option value="5">5 years old</option>
+                    <option value="6">6 years old</option>
+                    <option value="7">7 years old</option>
+                    <option value="8">8 years old</option>
+                    <option value="9">9 years old</option>
+                    <option value="10">10 years old</option>
+                    <option value="11">11 years old</option>
+                    <option value="12">12 years old</option>
+                    <option value="13">13 years old</option>
+                    <option value="14">14 years old</option>
+                    <option value="15">15 years old</option>
+                    <option value="16">16 years old</option>
+                </select>
+
+                <!-- TODO Get these on the same line -->
+                <select name="field_present_prefix">
+                    <option value="a" selected="">a</option>
+                    <option value="an">an</option>
+                    <option value="the">the</option>
+                    <option value="more">more</option>
+                    <option value="some">some</option>
+                </select>
+                <input
+                    type="text"
+                    placeholder="A gift the Child has asked Santa for (i.e. A dog, some legos, more dolls)"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'A gift the Child has asked Santa for (i.e. A dog, some legos, more dolls)'"
+                    name="">
+
+                <!-- TODO Get these on the same line -->
+                <select name="field_friend_type">
+                    <option value="" disabled hidden selected>Childs friend, pet, sibling,teacher name</option>
+                    <option value="Best friend">Best friend</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Pet">Pet</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+                <input type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+
+                <select name="field_event">
+                    <option value="" disabled hidden selected>An event that occurred in the past 12 months</option>
+                    <optgroup label="Pets">
+                        <option value="Pets-1">Child/family got a new dog</option>
+                        <option value="Pets-4">Child/family got a new kitten</option>
+                        <option value="Pets-5">Child/family got a new rabbit</option>
+                        <option value="Pets-6">Child/family got a new hamster</option>
+                        <option value="Pets-8">Child/family got some pet fish</option>
+                        <option value="Pets-10">Child/family got a ferret</option>
+                        <option value="Pets-12">Child/family got a pet mouse</option>
+                        <option value="Pets-13">Child/family got some pet mice</option>
+                        <option value="Pets-14">Child/family got a pet gerbil</option>
+                        <option value="Pets-15">Child/family got some pet gerbils</option>
+                    </optgroup>
+                    <optgroup label="Development">
+                        <option value="Development-1">Baby smiled for the first time</option>
+                        <option value="Development-2">Baby began eating solids</option>
+                        <option value="Development-3">Baby began sitting up on their own</option>
+                        <option value="Development-4">Baby has started sleeping through the night</option>
+                        <option value="Development-5">Child learned to crawl</option>
+                        <option value="Development-6">Child learned to walk</option>
+                        <option value="Development-7">Child started to get baby teeth</option>
+                        <option value="Development-8">Child started to get grown up teeth</option>
+                        <option value="Development-9">Child got all of their grown up teeth</option>
+                        <option value="Development-10">Child had teeth braces removed</option>
+                        <option value="Development-11">Child learned their ABC</option>
+                        <option value="Development-12">Child is learning to count</option>
+                        <option value="Development-13">Child learned to count</option>
+                        <option value="Development-14">Child is learning to write</option>
+                        <option value="Development-15">Child learning to read</option>
+                        <option value="Development-16">Child learned to tell the time</option>
+                        <option value="Development-18">Child learned to ride a bike</option>
+                        <option value="Development-19">Child learning to ride a bike</option>
+                        <option value="Development-20">Child laughed for the first time</option>
+                        <option value="Development-21">Child smiled for the first time</option>
+                        <option value="Development-22">Child became potty trained</option>
+                        <option value="Development-23">Child began to wear glasses</option>
+                        <option value="Development-24">Child had teeth braces removed</option>
+                    </optgroup>
+                    <optgroup label="Activities">
+                        <option value="Activities-1">Child joined a dance class</option>
+                        <option value="Activities-2">Child joined a football team</option>
+                        <option value="Activities-3">Child joined a basketball team</option>
+                        <option value="Activities-4">Child joined an athletics team</option>
+                        <option value="Activities-5">Child learning to swim</option>
+                        <option value="Activities-6">Child learned to swim</option>
+                    </optgroup>
+                    <optgroup label="Events">
+                        <option value="Events-1">Child/family moved house</option>
+                        <option value="Events-2">Child started play school</option>
+                        <option value="Events-3">Child started kindergarten</option>
+                        <option value="Events-4">Child started primary school</option>
+                        <option value="Events-5">Child got a little brother</option>
+                        <option value="Events-6">Child got a little sister</option>
+                        <option value="Events-7">Child got twin little brothers</option>
+                        <option value="Events-8">Child got twin little sisters</option>
+                        <option value="Events-9">Child got twin little brother and sister</option>
+                        <option value="Events-10">Child visited the zoo</option>
+                        <option value="Events-11">Child visited the seaside</option>
+                        <option value="Events-12">Child visited a theme park</option>
+                        <option value="Events-13">Child went on holiday on a plane</option>
+                        <option value="Events-14">Child went on holiday on a boat</option>
+                        <option value="Events-15">Child went on holiday on a train</option>
+                    </optgroup>
+                </select>
             </div>
+        </div>
+        <!-- // End container-->
     </div>
-  </div><!--List Product Section End-->
 
 
-<!-- TODO Need to make it so when user clicks form button, it saves the letter head img and form data to DB and brings ths data and user to the letterApproval view-->
-<div id="letterTypes">
-    <section id="contact class" class="container content-section text-center">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
+
+
+
+<!-- TODO Make the users choices show up on the letter and clean up.  -->
+    <div class="col-md-6 letter-live">
+        <img class="img-responsive" ng-src="img/scLetterHead.jpg"/>
+        <div class="inner-content">
+
+            <p class="content-letter">
+                Dear CHILD NAME,</p>
+
+            <p class="content-letter">Ho, ho, ho, Merry Christmas! I must start by congratulating you for making it onto this year's Nice List for AGE! Not only are you on the Nice List, but you’re in the top 10, well done!</p>
+
+            <p class="content-letter">Your BEHAVIOR(Mom and Dad/Mom/Dad) told me you’ve been a very good GENDER this year, and that you would like (a, an, the, some, more) PRESNET for Christmas. Well, I can’t promise every child will get what they ask for, but I
+                can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+
+            <p class="content-letter">CHILD NAME, I was just walking through my workshop, when I saw The Elves wrapping a present for PET/FRIEND/TEACHER/SIBLING. I can’t tell you what I saw them wrapping because it will ruin the surprise but
+                PET/FRIEND/TEACHER/SIBLING will be delighted with it on Christmas morning!</p>
+
+            <p class="content-letter">Mrs Claus told me you're SPECIAL EVENT. Good on you! Swimming is fun and a great form of exercise. Keep practicing and you'll be swimming on your own in no time! Do you know, the Elves love to ride around on my belly when I
+                swim back stroke. They're so cheeky!</p>
+
+            <p class="content-letter">CHILDS NAME, make sure you’re tucked up in bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll fly, and guess where we’ll be starting? That’s right! STATE!</p>
+
+            <p class="content-letter">Merry Christmas! Love, Santa Claus</p>
+        </div>
+    </div>
+
+    <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
+    <!-- <div id="letterTypes"> -->
+    <!-- <section class="container content-section text-right"> -->
+    <!-- <div class="container-fluid"> -->
+    <!-- <div class="row"> -->
+    <!-- <div class="col-md-3">
                     <img class="img-responsive" src="img/scLetterHead.jpg" ng-click="current='scLetterHead'"/>
                     <img class="img-responsive" src="img/scLetterHead2.jpg" ng-click="current='scLetterHead2'"/>
                 </div>
                 <div class="col-md-3">
                     <img class="img-responsive" src="img/scLetterHead3.jpg" ng-click="current='scLetterHead3'"/>
                     <img class="img-responsive" src="img/scLetterHead4.jpg" ng-click="current='scLetterHead4'"/>
-                </div>
-                <div class="col-md-6">
-                    <form id="responsiveForm">
-                        <img class="img-responsive" ng-src="img/{{current}}.jpg"/>
-                        <div class="form-inner-cont">
+                </div> -->
+    <!-- <div class="col-md-9"> -->
+    <!-- <form id="responsiveForm"> -->
+    <!-- <img class="img-responsive" ng-src="img/{{current}}.jpg"/> -->
+    <!-- <div class="form-inner-cont">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" id="name" name="name"/>
@@ -57,14 +226,11 @@
                         <div class="form-group">
                             <input type="submit" name="submit" class="form-control btn btn-primary" value="go"/>
                         </div>
-                      </div>
+                      </div> -->
 
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-    </div>
-
-</section>
-</div>
+    <!-- </div> -->
+    <!-- </form> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </section> -->
