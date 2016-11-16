@@ -1,4 +1,4 @@
-var app = angular.module('santaLettersApp', ['ui.router', 'ngAnimate']);
+var app = angular.module('santaLettersApp', ['ui.router']);
 
 app.config(function($urlRouterProvider, $stateProvider) {
 

@@ -48,8 +48,7 @@
               <p class="content-letter">CHILD NAME, I was just walking through my workshop, when I saw The Elves wrapping a present for PET/FRIEND/TEACHER/SIBLING. I can’t tell you what I saw them wrapping because it will ruin the surprise but
                   PET/FRIEND/TEACHER/SIBLING will be delighted with it on Christmas morning!</p>
 
-              <p class="content-letter">Mrs Claus told me you're SPECIAL EVENT. Good on you! Swimming is fun and a great form of exercise. Keep practicing and you'll be swimming on your own in no time! Do you know, the Elves love to ride around on my belly when I
-                  swim back stroke. They're so cheeky!</p>
+              <p class="content-letter">{{paragraphToShow.para}}</p>
 
               <p class="content-letter">CHILDS NAME, make sure you’re tucked up in bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll fly, and guess where we’ll be starting? That’s right! STATE!</p>
 
@@ -122,52 +121,45 @@
                 </select>
                 <input class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
 
-                <select ng-options="item.name for item in selectItemsFilterCriteria" name="field_event">
-                    <option ng-option= value="" disabled hidden selected>An event that occurred in the past 12 months</option>
+                <select ng-options="item.name for item in selectItemsFilter" name="field_event" ng-model="paragraphToShow">
+                    <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
                     <optgroup label="Pets">
-                        <option value="Pets-1">Child/family got a new dog</option>
-                        <option value="Pets-4">Child/family got a new kitten</option>
-                        <option value="Pets-5">Child/family got a new rabbit</option>
-                        <option value="Pets-8">Child/family got some pet fish</option>
+
                     </optgroup>
                     <optgroup label="Development">
-                        <option value="Development-3">Baby began sitting up on their own</option>
-                        <option value="Development-6">Child learned to walk</option>
-                        <option value="Development-7">Child started to get baby teeth</option>
-                        <option value="Development-8">Child lost their first tooth</option>
-                        <option value="Development-11">Child learned their ABC</option>
-                        <option value="Development-12">Child is learning to count</option>
-                        <option value="Development-13">Child learned to count</option>
-                        <option value="Development-14">Child is learning to write</option>
-                        <option value="Development-15">Child learning to read</option>
-                        <option value="Development-18">Child learned to ride a bike</option>
-                        <option value="Development-19">Child learning to ride a bike</option>
-                        <option value="Development-22">Child became potty trained</option>
-                        <option value="Development-23">Child began to wear glasses</option>
+                        <option value="Development-2">Child learned to walk</option>
+                        <option value="Development-5">Child learned their ABCs</option>
+                        <option value="Development-6">Child is learning to count</option>
+                        <option value="Development-7">Child learned to count</option>
+                        <option value="Development-8">Child is learning to write</option>
+                        <option value="Development-9">Child learning to read</option>
+                        <option value="Development-10">Child learned to ride a bike</option>
+                        <option value="Development-11">Child learning to ride a bike</option>
+                        <option value="Development-13">Child began to wear glasses</option>
                     </optgroup>
                     <optgroup label="Activities">
                         <option value="Activities-1">Child joined a dance class</option>
                         <option value="Activities-2">Child joined a soccer team</option>
-                        <option value="Activities-2">Child joined a football team</option>
-                        <option value="Activities-3">Child joined a basketball team</option>
-                        <option value="Activities-4">Child joined an athletics team</option>
+                        <option value="Activities-3">Child joined a football team</option>
+                        <option value="Activities-4">Child joined a basketball team</option>
+                        <option value="Activities-5">Child joined an athletics team</option>
                         <option value="Activities-6">Child learned to swim</option>
                     </optgroup>
                     <optgroup label="Events">
                         <option value="Events-1">Child/family moved house</option>
                         <option value="Events-2">Child started school</option>
                         <option value="Events-3">Child started kindergarten</option>
-                        <option value="Events-5">Child got a little brother</option>
-                        <option value="Events-6">Child got a little sister</option>
-                        <option value="Events-7">Child got twin little brothers</option>
-                        <option value="Events-8">Child got twin little sisters</option>
-                        <option value="Events-9">Child got twin little brother and sister</option>
-                        <option value="Events-10">Child visited the zoo</option>
-                        <option value="Events-11">Child visited the ocean</option>
-                        <option value="Events-12">Child visited a theme park</option>
-                        <option value="Events-13">Child went on vacation on a plane</option>
-                        <option value="Events-14">Child went on vacation on a boat</option>
-                        <option value="Events-15">Child went on vacation on a train</option>
+                        <option value="Events-4">Child got a little brother</option>
+                        <option value="Events-5">Child got a little sister</option>
+                        <option value="Events-6">Child got twin little brothers</option>
+                        <option value="Events-7">Child got twin little sisters</option>
+                        <option value="Events-8">Child got twin little brother and sister</option>
+                        <option value="Events-9">Child visited the zoo</option>
+                        <option value="Events-10">Child visited the ocean</option>
+                        <option value="Events-11">Child visited a theme park</option>
+                        <option value="Events-12">Child went on vacation on a plane</option>
+                        <option value="Events-13">Child went on vacation on a boat</option>
+                        <option value="Events-14">Child went on vacation on a train</option>
                     </optgroup>
                 </select>
                 <button ui-sref="letterApproval" class="green" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>

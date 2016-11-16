@@ -560,11 +560,25 @@ footer hr {
   margin-left: 200px;
 }
 
+.ornament-pagination {
+  vertical-align: middle;
+  padding: 55px 5px;
+}
+
+.ornament-pagination-p {
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .ring{
   height:15px;
   width: 5px;
-  background-color: ##c03636;
-  border: 2px solid  #f99d24;
+  background-color: ##C03636;
+  border: 2px solid  #F99D24;
   border-radius: 45%;
   position: relative;
   left: 76.4px;
@@ -574,7 +588,7 @@ footer hr {
 .string {
   width: 1.5px;
   position: relative;
-  background-color: #f99d24;
+  background-color: #F99D24;
   height: 52px;
   left: 78px;
   top: 14.4px;
@@ -583,7 +597,7 @@ footer hr {
 .button {
   height: 22px;
   width: 30px;
-  background-color: #f99d24;
+  background-color: #F99D24;
   position: relative;
   left: 65px;
   top: 7px;
@@ -600,7 +614,7 @@ footer hr {
   }
 
 .green-ball {
-  background-color: #9cd6ac;
+  background-color: #5CB85C;
   border-radius: 50%;
   height: 150px;
   width: 150px;
