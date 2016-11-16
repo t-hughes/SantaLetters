@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/responsive.css"/>
         <title>Santa Letters</title>
     </head>
-    <body ng-controller="cartCtrl">
+    <body>
 
         <!-- Header -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,12 +37,13 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+              <li><a ui-sref="home">Home</a></li>
               <li><a ui-sref="userDetails">Letter Workshop</a></li>
               <li><a ui-sref="about">About</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <!-- <ul class="nav navbar-nav navbar-right">
               <li class="cartimg-width"><a ui-sref="userCart" role="button" aria-expanded="false"><img class="cart-img" src="img/sledCart.png"><span class="badge" ng-if="cart.length >= 1">{{cart.length}}</span></a></li>
-            </ul>
+            </ul> -->
           </div><!--navbar-collapse -->
 </div><!--container-fluid-->
 </nav>

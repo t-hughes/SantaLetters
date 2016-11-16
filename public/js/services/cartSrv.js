@@ -19,6 +19,6 @@ app.service('cartSrv', function () {
   };
 
 
-  // TODO add a bubble next to shopping cart that increments as items are added just count the array have controller count the arrayoutput with {{cart.length}}
+  // TODO get rid of cart view and do all of this on the user checkout. get rid of the sleight cart icon and badge in index.html 
 
 });
