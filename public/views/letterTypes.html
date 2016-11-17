@@ -38,19 +38,17 @@
           <div class="inner-content">
 
               <p class="content-letter">
-                  Dear CHILD NAME,</p>
+                  Dear {{childFirstName}},</p>
 
-              <p class="content-letter">Ho, ho, ho, Merry Christmas! I must start by congratulating you for making it onto this year's Nice List for AGE! Not only are you on the Nice List, but you’re in the top 10, well done!</p>
+              <p class="content-letter">Ho, ho, ho, Merry Christmas! {{ageToShow.list}}</p>
 
-              <p class="content-letter">Your BEHAVIOR(Mom and Dad/Mom/Dad) told me you’ve been a very good GENDER this year, and that you would like (a, an, the, some, more) PRESNET for Christmas. Well, I can’t promise every child will get what they ask for, but I
-                  can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+              <p class="content-letter">Your BEHAVIOR(Mom and Dad/Mom/Dad) told me you’ve been a very good {{genderToShow.gender}} this year, and that you would like {{prefixToShow.prefix}} {{presentType}} for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-              <p class="content-letter">CHILD NAME, I was just walking through my workshop, when I saw The Elves wrapping a present for PET/FRIEND/TEACHER/SIBLING. I can’t tell you what I saw them wrapping because it will ruin the surprise but
-                  PET/FRIEND/TEACHER/SIBLING will be delighted with it on Christmas morning!</p>
+              <p class="content-letter">{{childFirstName}}, I was just walking through my workshop, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{friendName}} will be delighted with it on Christmas morning!</p>
 
               <p class="content-letter">{{paragraphToShow.para}}</p>
 
-              <p class="content-letter">CHILDS NAME, make sure you’re tucked up in bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll fly, and guess where we’ll be starting? That’s right! STATE!</p>
+              <p class="content-letter">{{childFirstName}}, make sure you’re tucked up in bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll fly, and guess where we’ll be starting? That’s right! STATE!</p>
 
               <p class="content-letter">Merry Christmas! Love, Santa Claus</p>
           </div>
@@ -70,96 +68,37 @@
 
                 <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="address2">
 
-                <input type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="city">
+                <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="city">
 
                 <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="">
 
-                <select name="field_present_prefix" class="field-select">
-                    <option value="" selected="">Childs Gender</option>
-                    <option value="boy">Boy</option>
-                    <option value="girl">Girl</option>
-                </select>
-
-                <select name="field_age" class="field-input">
+                <select ng-options="item.name for item in selectAgeFilter" ng-model="ageToShow" name="field_age" class="field-input-age">
                     <option value="" disabled hidden selected>Childs Age</option>
-                    <option value="<1">Newborn to 12 months old</option>
-                    <option value="1">1 year old</option>
-                    <option value="2">2 years old</option>
-                    <option value="3">3 years old</option>
-                    <option value="4">4 years old</option>
-                    <option value="5">5 years old</option>
-                    <option value="6">6 years old</option>
-                    <option value="7">7 years old</option>
-                    <option value="8">8 years old</option>
-                    <option value="9">9 years old</option>
-                    <option value="10">10 years old</option>
-                    <option value="11">11 years old</option>
-                    <option value="12">12 years old</option>
-                    <option value="13">13 years old</option>
-                    <option value="14">14 years old</option>
-                    <option value="15">15 years old</option>
-                    <option value="16">16 years old</option>
                 </select>
 
-                <!-- TODO Get these on the same line -->
-                <select name="field_present_prefix" class="field-select">
-                    <option value="a" selected="">a</option>
-                    <option value="an">an</option>
-                    <option value="the">the</option>
-                    <option value="more">more</option>
-                    <option value="some">some</option>
+                <select ng-options="item.name for item in selectGenderFilter" ng-model="genderToShow" name="field_present_prefix" class="field-select">
+                    <option value="" disabled hidden selected>Childs Gender</option>
                 </select>
-                <input class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
 
-                <!-- TODO Get these on the same line -->
-                <select name="field_friend_type" class="field-select">
-                    <option value="Best friend" selected="">Best friend</option>
-                    <option value="Brother">Brother</option>
-                    <option value="Sister">Sister</option>
-                    <option value="Pet">Pet</option>
-                    <option value="Teacher">Teacher</option>
+                <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
+                  <option value="" selected hidden disabled>---</option>
                 </select>
-                <input class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+                <input ng-model="presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
 
-                <select ng-options="item.name for item in selectItemsFilter" name="field_event" ng-model="paragraphToShow">
+                <select ng-options="item.name for item in selectFriendFilter" ng-model="friendToShow" name="friend_type" class="field-select">
+                    <option value="" selected hidden disabled>---</option>
+                </select>
+                <input ng-model="friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+
+                <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
                     <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
                     <optgroup label="Pets">
-
                     </optgroup>
                     <optgroup label="Development">
-                        <option value="Development-2">Child learned to walk</option>
-                        <option value="Development-5">Child learned their ABCs</option>
-                        <option value="Development-6">Child is learning to count</option>
-                        <option value="Development-7">Child learned to count</option>
-                        <option value="Development-8">Child is learning to write</option>
-                        <option value="Development-9">Child learning to read</option>
-                        <option value="Development-10">Child learned to ride a bike</option>
-                        <option value="Development-11">Child learning to ride a bike</option>
-                        <option value="Development-13">Child began to wear glasses</option>
                     </optgroup>
                     <optgroup label="Activities">
-                        <option value="Activities-1">Child joined a dance class</option>
-                        <option value="Activities-2">Child joined a soccer team</option>
-                        <option value="Activities-3">Child joined a football team</option>
-                        <option value="Activities-4">Child joined a basketball team</option>
-                        <option value="Activities-5">Child joined an athletics team</option>
-                        <option value="Activities-6">Child learned to swim</option>
                     </optgroup>
                     <optgroup label="Events">
-                        <option value="Events-1">Child/family moved house</option>
-                        <option value="Events-2">Child started school</option>
-                        <option value="Events-3">Child started kindergarten</option>
-                        <option value="Events-4">Child got a little brother</option>
-                        <option value="Events-5">Child got a little sister</option>
-                        <option value="Events-6">Child got twin little brothers</option>
-                        <option value="Events-7">Child got twin little sisters</option>
-                        <option value="Events-8">Child got twin little brother and sister</option>
-                        <option value="Events-9">Child visited the zoo</option>
-                        <option value="Events-10">Child visited the ocean</option>
-                        <option value="Events-11">Child visited a theme park</option>
-                        <option value="Events-12">Child went on vacation on a plane</option>
-                        <option value="Events-13">Child went on vacation on a boat</option>
-                        <option value="Events-14">Child went on vacation on a train</option>
                     </optgroup>
                 </select>
                 <button ui-sref="letterApproval" class="green" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>

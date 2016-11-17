@@ -1,4 +1,10 @@
 /*General Styles */
+#clouds {
+margin-top: -82px;
+fill: #FFF;
+stroke: #fff;
+}
+
 html {
   min-height: 100%;
 }
@@ -51,44 +57,10 @@ p {
     color: #B2B2B2;
 }
 
-/*ngAnimate*/
-.ng-enter {
-  width: 100%;
-  position: absolute;
-  transition: .1s all ease;
-}
-.ng-enter {
-  opacity: 0;
-}
-
-.ng-enter-active {
-  opacity: 1;
-}
-
-/*.ng-leave {
-  opacity: 1;
-}*/
-
-.ng-leave-active {
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-/* Overlays */
-.redoverlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 24, 0, 0.75);
-    position: relative;
-}
+/* Home Overlay */
 
 .lightoverlay {
     background-color: rgba(248, 248, 248, 0.9);
-    position: relative;
-}
-
-.darkoverlay {
-    background-color: rgba(54, 57, 66, 0.75);
     position: relative;
 }
 
@@ -111,6 +83,12 @@ p {
 }
 
 /*Navbar*/
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+}
+
+/*Shopping Cart Navbar*/
 /*.badge {
   background-color: #D9534F;
   font-size: 12px;
@@ -125,11 +103,6 @@ p {
 /*.cartimg-width{
   width: 107px;
 }*/
-
-.navbar-brand {
-  font-family: 'Pacifico', cursive;
-  font-size: 25px;
-}
 
 
 /*Home View*/
@@ -148,16 +121,23 @@ p {
 }
 
 #main h1 {
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: .8em;
-    text-shadow: 7px 9px 5px rgba(161, 19, 15, 0.294);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: .8em;
+  text-shadow: 6px 4px 5px rgba(161, 19, 15, 0.294);
+}
+
+#main h2 {
+  text-shadow: 2px 2px 0px #000;
 }
 
 #main p {
-    text-transform: uppercase;
-    padding-top: 75px;
-    color: #FFF;
+  text-transform: uppercase;
+  padding-top: 75px;
+  color: #FFF;
+  text-shadow: 1px 2px 0px #000;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .mistletoe {
@@ -459,6 +439,10 @@ select::-ms-expand {
 .field-input {
   float: right !important;
   width: 72%  !important;
+}
+
+.field-input-age {
+  width: 72%;
 }
 
 .letter-live {
