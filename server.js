@@ -11,12 +11,13 @@ let express = require('express'),
 // TODO Setup localAuth for admin and possible user if you want to do user logins
 
 //Init Express
- let app = express();
+ let app = express()
 
  //Controllers
  let restCtrl = require('./controllers/restCtrl');
 
 //Middleware and Controllers
+
 app.use(bodyParser.json());
 app.use(cors());
 
