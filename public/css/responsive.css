@@ -81,10 +81,7 @@
     #main p {
         padding-top: 60px;
     }
-    .mistletoe {
-        height: 160px;
-        margin-top: -25px;
-    }
+
     input {
         padding: 15px 30px;
         width: 85%;
@@ -137,9 +134,7 @@
     #main .container {
         padding-top: 50px;
     }
-    .mistletoe {
-        margin-top: -50px;
-    }
+
     #ornament-wrapper {
       display: none;
     }
@@ -159,9 +154,7 @@
     #overview {
         padding-top: 50px;
     }
-    .mistletoe {
-        margin-top: -30px;
-    }
+    
     #ornament-wrapper {
       display: none;
     }

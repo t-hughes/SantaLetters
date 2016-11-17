@@ -4,7 +4,7 @@
 <!-- TODO Line the images up 2x2 and give them a background and boxshadow -->
 <div id="products" class="container">
     <div class="row letter-workshop-header text-center">
-        <h2>Welcome To The Letter Workshop!</h2>
+        <h2>Welcome To <span class="highlight">Santa's</span> Letter Workshop!</h2>
     </div>
 
     <div class="col-md-6" ng-repeat="product in products">
@@ -31,26 +31,24 @@
 <!--List Product Section End-->
 
 <div class="row">
-
-  <!-- TODO Make the users choices show up on the letter and clean up.  -->
-      <div class="col-md-6 letter-live">
+  <!-- TODO Style the paragraphs in the letter.-->
+      <div class="col-md-6" id="personalized-letter">
           <img class="img-responsive" ng-src="img/{{current}}.jpg"/>
-          <div class="inner-content">
+          <div class="inner-content-wrapper">
 
-              <p class="content-letter">
-                  Dear {{childFirstName}},</p>
+              <p>Dear {{childFirstName}},</p>
 
-              <p class="content-letter">Ho, ho, ho, Merry Christmas! {{ageToShow.list}}</p>
+              <p>Ho, Ho, Ho, Merry Christmas! {{ageToShow.list}}</p>
 
-              <p class="content-letter">Your BEHAVIOR(Mom and Dad/Mom/Dad) told me you’ve been a very good {{genderToShow.gender}} this year, and that you would like {{prefixToShow.prefix}} {{presentType}} for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+              <p>Your {{behaviorToShow.behavior}} told me you’ve been a very good {{genderToShow.gender}} this year, and that you would like {{prefixToShow.prefix}} {{presentType}} for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-              <p class="content-letter">{{childFirstName}}, I was just walking through my workshop, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{friendName}} will be delighted with it on Christmas morning!</p>
+              <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{friendName}} will be delighted with it on Christmas morning!</p>
 
-              <p class="content-letter">{{paragraphToShow.para}}</p>
+              <p>{{paragraphToShow.para}}</p>
 
-              <p class="content-letter">{{childFirstName}}, make sure you’re tucked up in bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll fly, and guess where we’ll be starting? That’s right! STATE!</p>
+              <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
-              <p class="content-letter">Merry Christmas! Love, Santa Claus</p>
+              <p>Merry Christmas! Love, Santa Claus</p>
           </div>
       </div>
 
@@ -64,14 +62,15 @@
 
             <div class="userDetails-form">
 
-                <input type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="address1">
+                <input type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="field_guardian_name">
 
-                <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="address2">
+                <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="field_guardian_name">
 
-                <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="city">
+                <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
-                <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="">
+                <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="field_child_name">
 
+            <div class="form-group">
                 <select ng-options="item.name for item in selectAgeFilter" ng-model="ageToShow" name="field_age" class="field-input-age">
                     <option value="" disabled hidden selected>Childs Age</option>
                 </select>
@@ -79,9 +78,17 @@
                 <select ng-options="item.name for item in selectGenderFilter" ng-model="genderToShow" name="field_present_prefix" class="field-select">
                     <option value="" disabled hidden selected>Childs Gender</option>
                 </select>
+            </div>
 
+            <div class="form-group">
+              <select ng-options="item.name for item in selectBehaviorFilter" ng-model="behaviorToShow" name="field_behavior">
+                <option value="" disabled hidden selected>Who Could Report The Childs Behavior?</option>
+              </select>
+            </div>
+
+            <div class="form-group">
                 <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
-                  <option value="" selected hidden disabled>---</option>
+                    <option value="" selected hidden disabled>---</option>
                 </select>
                 <input ng-model="presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
 
@@ -89,6 +96,7 @@
                     <option value="" selected hidden disabled>---</option>
                 </select>
                 <input ng-model="friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+            </div>
 
                 <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
                     <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>

@@ -18,27 +18,27 @@
                         <div class="userDetails-form">
                             <div class="form-group">
                                 <div class="col-md-9">
-                                    <input ng-model="customerData.billing_address1" type="text" name="address" class="userCheckout-form" placeholder="Billing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 1'"/>
+                                    <input ng-model="customerData.billing_address1" type="text" name="address" class="userCheckout-input" placeholder="Billing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 1'"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-9">
-                                    <input ng-model="customerData.billing_address2" type="text" name="address" class="userCheckout-form" value="" placeholder="Billing Address 2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 2'" id="name_input"/>
+                                    <input ng-model="customerData.billing_address2" type="text" name="address" class="userCheckout-input" value="" placeholder="Billing Address 2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 2'" id="name_input"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-9">
-                                    <input ng-model="customerData.billing_city" type="text" name="city" class="userCheckout-form" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'"/>
+                                    <input ng-model="customerData.billing_city" type="text" name="city" class="userCheckout-input" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <input ng-model="customerData.billing_state" type="text" name="state" class="userCheckout-form" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'"/>
+                                    <input ng-model="customerData.billing_state" type="text" name="state" class="userCheckout-input" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <input ng-model="customerData.billing_zip" type="text" name="zip_code" class="userCheckout-form" placeholder="Zip" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Name'"/>
+                                    <input ng-model="customerData.billing_zip" type="text" name="zip_code" class="userCheckout-input" placeholder="Zip" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Name'"/>
                                 </div>
                                 <button ng-click="saveFinalCustomer(customerData)" class="green" type="submit" ><span>Checkout</span><i class="ion-checkmark"></i></button>
                             </div>
@@ -51,7 +51,7 @@
 <!-- TODO Add final order details -->
                 <!--Order Details Start-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                    <div class="panel">
+                    <div class="panel order-deets">
                         <div class="panel-body">
                             <h1 class="form-header">&bull; Order Deets &bull;</h1>
                             <div class="underline"></div>

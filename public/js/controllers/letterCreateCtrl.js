@@ -96,10 +96,44 @@ $scope.saveFinalCustomer = function (data){
 $scope.current = 'scLetterHead';
 
 //Personalized Letter Changes
+
+$scope.selectAgeFilter = [
+  {id: 0, name: "Childs Age", enabled: false},
+  {id: 1, name: "Newborn to 12 months old", list: "I want to first congratulate you for making it on the the Nice list so quickly for your very first Christmas!"},
+  {id: 2, name: "1 year old", list: "I first want to let you know that you have done so much good this year that you're at the tope of the Nice list for 1 year olds!"},
+  {id: 3, name: "2 years old", list: "The Elves just let me know that they penciled your name in on the Nice list for 2 year olds!"},
+  {id: 4, name: "3 years old", list: "Mrs. Clause and I were just checking the Nice list for 3 year olds and guess who we saw on it? You!"},
+  {id: 5, name: "4 years old", list: "I'd like to first let you know that Rudolph helped me write your name on the Nice list for 4 year olds. I can't beleive I almost forgot! Make sure to thank Rudoplh next time you see him!"},
+  {id: 6, name: "5 years old", list: "You did it! You made the Nice list for 5 year olds this year! When I read your name out loud, the whole North Pole erupted in cheers. Good job!"},
+  {id: 7, name: "6 years old", list: "I was reviewing my Nice list for 6 year olds when I couldn't beleive I saw your name! I can't beleive you're already 6 years old! Good job on making it on the Nice list for yet another year."},
+  {id: 8, name: "7 years old", list: "It brought a great big grin to my face when I came across your name on the Nice list for 7 year olds! I knew you would make it, just like you do every year!"},
+  {id: 9, name: "8 years old", list: "I was reviewing my Nice list and it brought me great joy to see your name right near the top for 8 year olds"},
+  {id: 10, name: "9 years old", list: "The Elves and reindeer wanted me to congratulate you for making the Nice list again! The Nice list for 9 year olds isn't that easy to get on. Well done!"},
+  {id: 11, name: "10 years old", list: "for 10 year olds"},
+  {id: 12, name: "11 years old", list: "I want to first congratulate you for making it on the Nice list for 12 year olds. Not only are you on the Nice list, but you’re in the top 10, well done!"},
+  {id: 13, name: "12 years old", list: "I first want to express my deepest gratitude to you for making it on the Nice list for 12 year olds this year. You must have been quite good this year! Thank you!"},
+  {id: 14, name: "13 years old", list: "I'll be honest, at first I thought I lost my Nice list for 13 year olds this year, but I found it stuck between Rudolph's teeth! I was happy to see your name right near the top! Well done!"},
+  {id: 15, name: "14 years old", list: "The Elves and reindeer wanted me to congratulate you for making the Nice list again this year! The Nice list for 13 year olds isn't that easy to get on. Well done!"},
+  {id: 16, name: "15 years old", list: "I'd first like to let you know about the panic you caused me the other day. While I was reviewing my Nice list for 15 year olds I didn't see your name! It wasn't until Mrs. Claus showed me you were right on the back page. You made it right in time. Great job! "},
+  {id: 17, name: "16 years old", list: "I wasn't surprised when I came across your name on the Nice list for 16 year olds. You have been on the Nice list every year for the past 15 years! That has to be some kind of record, too bad I don't have a list for 16 year old record holders."},
+];
+
 $scope.selectGenderFilter = [
   {id: 0, name:"Childs Gender", enabled: false},
   {id: 1, name: "Girl", gender: "girl"},
   {id: 2, name: "Boy", gender: "boy"},
+  {id: 3, name: "Do Not Specify (Kid)", gender: "kid"},
+];
+
+$scope.selectBehaviorFilter = [
+  {id: 0, name: "Who Could Report The Childs Behavior?", enabled: false},
+  {id: 1, name: "Mom", behavior: "Mom"},
+  {id: 2, name: "Dad", behavior: ""},
+  {id: 3, name: "Mom & Dad", behavior: "Mom & Dad"},
+  {id: 4, name: "Grandma", behavior: "Grandma"},
+  {id: 5, name: "Grandpa", behavior: "Grandpa"},
+  {id: 6, name: "Grandma & Grandpa", behavior: "Grandma & Grandpa"},
+  // {id: 7, name: "", behavior: ""} TODO can I allow user to input their own title if they are a guardian?
 ];
 
 $scope.selectPrefixFilter = [
@@ -120,27 +154,6 @@ $scope.selectFriendFilter = [
   {id: 5, name: "Teacher", friend: "teacher"},
 ];
 
-$scope.selectAgeFilter = [
-  {id: 0, name: "Childs Age", enabled: false},
-  {id: 1, name: "Newborn to 12 months old", list: "I want to first congratulate you for making it on the the Nice list so quickly for your very first Christmas!"},
-  {id: 2, name: "1 year old", list: "I first want to let you know that you have done so much good this year that you're at the tope of the Nice list for 1 year olds!"},
-  {id: 3, name: "2 years old", list: "The Elves just let me know that they penciled your name in on the Nice list for 2 year olds!"},
-  {id: 4, name: "3 years old", list: "Mrs. Clause and I were just checking the Nice list for 3 year olds and guess who we saw on it? You!"},
-  {id: 5, name: "4 years old", list: "I'd like to first let you know that Rudolph helped me write your name on the Nice list for 4 year olds. I can't beleive I almost forgot! Make sure to thank Rudoplh next time you see him!"},
-  {id: 6, name: "5 years old", list: "You did it! You made the Nice list for 5 year olds this year! When I read your name out loud, the whole North Pole erupted in cheers. Good job!"},
-  {id: 7, name: "6 years old", list: "I was reviewing my Nice list for 6 year olds when I couldn't beleive I saw your name! I can't beleive you're already 6 years old! Good job on making it on the Nice list for yet another year."},
-  {id: 8, name: "7 years old", list: "It brought a great big grin to my face when I came across your name on the Nice list for 7 year olds! I knew you would make it, just like you do every year!"},
-  {id: 9, name: "8 years old", list: "I was reviewing my Nice list and it brought me great joy to see your name right near the top for 8 year olds"},
-  {id: 10, name: "9 years old", list: "The Elves and reindeer wanted me to congratulate you for making the Nice list again! The Nice list for 9 year olds isn't that easy to get on. Well done!"},
-  {id: 11, name: "10 years old", list: "for 10 year olds"},
-  {id: 12, name: "11 years old", list: "I want to first congratulate you for making it on the Nice list for 12 year olds. Not only are you on the Nice list, but you’re in the top 10, well done!"},
-  {id: 13, name: "12 years old", list: "I first want to express my deepest gratitude to you for making it on the Nice list for 12 year olds this year. You must have been quite good this year! Thank you!"},
-  {id: 14, name: "13 years old", list: "I'll be honest, at first I thought I lost my Nice list for 13 year olds this year, but I found it stuck between Rudolph's teeth! I was happy to see your name right near the top! Well done!"},
-  {id: 15, name: "14 years old", list: "The Elves and reindeer wanted me to congratulate you for making the Nice list again this year! The Nice list for 13 year olds isn't that easy to get on. Well done!"},
-  {id: 16, name: "15 years old", list: "I'd first like to let you know about the panic you caused me the other day. While I was reviewing my Nice list for 15 year olds I didn't see your name! It wasn't until Mrs. Claus showed me you were right on the back page. You made it right in time. Great job! "},
-  {id: 17, name: "16 years old", list: "I wasn't surprised when I came across your name on the Nice list for 16 year olds. You have been on the Nice list every year for the past 15 years! That has to be some kind of record, to bad I don't have a list for 16 year old record holders."},
-];
-
 $scope.selectEventFilter = [
   {id: 1, name: "Select an event that occurred in the past 12 months", enabled: false},
   {id: 2,name: "child/family got a new pet dog", para: "I see you got a pet dog this year. I'll be as quiet as a mouse and be sure not to wake your dog when I visit on Christmas Eve! I only ask that you teach him not to bite me as I come down the chimney!"},
@@ -150,7 +163,7 @@ $scope.selectEventFilter = [
   {id: 6, name: "Child lost their first tooth", para: "The tooth fairy told me he visted your house and took your first tooth! I hope he left a generous gift under your pillow. Make sure to keep smiling!"},
   {id: 7, name: "Child became potty trained", para: "What great news! The elves just told me you are now potty trained. All of us here at the North Pole are so proud of you! Make sure to keep your hands clean by washing them after each time you go potty."},
   {id: 8, name: "Child learned to walk", para: "Mrs. Claus just informed me that you learned to walk! That is great news! Do you have a favorite pair of snow boots that you love to play in the snow with? I do! Mine are black and lined with fur. They have bells that jingle when I walk."},
-  {id: 9, name: "Child is learning to count", para: "I hear you have been learning to count. Counting is a great skill to have! I count all the children on the nice and naughty list. I hope I counted you in on the nice one. If you want to practice counting, you could make a calendar so you can count down the days till Christmas!"},
+  {id: 9, name: "Child is learning to count", para: "I hear you have been learning to count. Counting is a great skill to have! I count all the children on the nice and naughty lists. If you want to practice counting, you could make a calendar so you can count down the days till Christmas!"},
   {id: 10, name: "Child learned to count", para: "Mrs. Claus told me you have learned to count. That is fantastic news! Countng is a great skill to have. I have to count my reindeer to make sure none of them have wondered off before we fly around the world. If you haven't already, you could make a calendar to count down the days till Christmas!"},
   {id: 11, name: "Child is learning to write", para: "I hear you're learning to write. That's fantastic! Did you write the letter Mrs Claus passed me earlier? I hope Rudolph didn't eat them! Make sure to practice daily and you'll be writing letters like this one in no time. If you want to practice writing, why don't you write back to me and let me know how you enjoyed your Christmas!"},
   {id: 12, name: "Child is learning to read", para: "My Head Elf told me you've been busy learning to read this year. Keep at it and make sure to read everyday. What has been your favorite book so far? You could practice by trying to read my letter on your own! Don't be scared to ask for help if you can't read my handwriting."},

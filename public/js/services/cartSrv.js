@@ -19,6 +19,6 @@ app.service('cartSrv', function () {
   };
 
 
-  // TODO get rid of cart view and do all of this on the user checkout. get rid of the sleight cart icon and badge in index.html 
+
 
 });

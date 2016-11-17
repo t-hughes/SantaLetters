@@ -1,4 +1,7 @@
-/*General Styles */
+/*///////////////////////*/
+/*///GENERAL STYLES///*/
+/*//////////////////////*/
+
 #clouds {
 margin-top: -82px;
 fill: #FFF;
@@ -57,14 +60,19 @@ p {
     color: #B2B2B2;
 }
 
-/* Home Overlay */
+/*///////////////////////*/
+/*////HOME OVERLAY/////*/
+/*//////////////////////*/
 
 .lightoverlay {
     background-color: rgba(248, 248, 248, 0.9);
     position: relative;
 }
 
-/* Section Headings */
+/*/////////////////////////*/
+/*///SECTION HEADINGS///*/
+/*////////////////////////*/
+
 .sectionhead {
   padding: 0 150px;
 }
@@ -82,18 +90,16 @@ p {
     border-bottom: 4px solid #EEE;
 }
 
-/*Navbar*/
+/*////////////////*/
+/*///NAVBAR///*/
+/*///////////////*/
+
 .navbar-brand {
   font-family: 'Pacifico', cursive;
   font-size: 25px;
 }
 
-/*Shopping Cart Navbar*/
-/*.badge {
-  background-color: #D9534F;
-  font-size: 12px;
-  font-weight: 600;
-}*/
+/*Shopping Cart*/
 
 /*.cart-img {
   margin-bottom: -15px;
@@ -104,8 +110,17 @@ p {
   width: 107px;
 }*/
 
+/*.badge {
+  background-color: #D9534F;
+  font-size: 12px;
+  font-weight: 600;
+}*/
 
-/*Home View*/
+
+/*//////////////////////*/
+/*////HOME VIEW///////*/
+/*/////////////////////*/
+
 /* Main Section */
 #main {
     text-align: center;
@@ -138,11 +153,6 @@ p {
   text-shadow: 1px 2px 0px #000;
   font-weight: 700;
   letter-spacing: 0.5px;
-}
-
-.mistletoe {
-  margin-top: 80px;
-  width: 185px;
 }
 
 .home-santa {
@@ -195,11 +205,13 @@ p {
     font-weight: 600;
 }
 
-/*////////////////////*/
-/*//LETTER CREATION START*/
-/*///////////////////*/
+/*///////////////////////////*/
+/*///LETTER CREATION START/*/
+/*//////////////////////////*/
 
-/*User Details View*/
+/*///////////////////////*/
+/*//USER DETAILS VIEW//*/
+/*//////////////////////*/
 #userDetails {
   padding-top: 100px;
   display: flex;
@@ -247,24 +259,11 @@ input[type='text'], [type='email'], select {
 	background: none;
   border: none;
 	border-bottom: solid 2px #474544;
-	color: #474544;
-	font-size: 14px;
-  font-weight: 400;
   letter-spacing: 1px;
 	margin: 0em 0 1.875em 0;
-	padding: 0 0 0.875em 0;
+	padding: 0 0 0.875em 0.417em;
   text-transform: uppercase;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
 }
 
 input[type='text']:focus, [type='email']:focus, select:focus {
@@ -384,7 +383,14 @@ button.green {
   background-color: #9CD6AC;
 }
 
-/* Products View */
+
+/*///////////////////////*/
+/*///LETTER TYPES VIEW///*/
+/*//////////////////////*/
+#letterTypes {
+  padding-top: 100px;
+}
+
 .letter-workshop-header {
   padding-bottom: 50px;
 }
@@ -413,6 +419,14 @@ button.green {
   font-size: 12px;
 }
 
+.img-responsive {
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.letter-workshop-header {
+  padding-bottom: 50px;
+}
+
 /*Santa Question Form*/
 #santaQ-container {
   border: solid 3px #474544;
@@ -420,6 +434,7 @@ button.green {
   margin-top: 100px;
   max-width: 825px;
   width: 85%;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 select {
@@ -433,26 +448,27 @@ select::-ms-expand {
 }
 
 .field-select{
-  width: 25%;
+  width: 28%;
 }
 
 .field-input {
   float: right !important;
-  width: 72%  !important;
+  width: 69%  !important;
 }
 
 .field-input-age {
-  width: 72%;
+  width: 69%;
+  margin-right: 16px;
 }
 
-.letter-live {
-  width: 680px;
+#personalized-letter {
+  width: 762px;
   margin-top: 100px;
   margin-left: 140px;
   position: relative;
 }
 
-.inner-content {
+.inner-content-wrapper {
   position: absolute;
   z-index: 10;
   top: 5px;
@@ -460,55 +476,32 @@ select::-ms-expand {
   padding-top: 175px;
 }
 
-.content-letter {
+#personalized-letter p {
   color: #000;
 }
 
-/*Letter Types View*/
-#letterTypes {
-  padding-top: 100px;
-}
 
-
-
-.letter-workshop-header {
-  padding-bottom: 50px;
-}
-
-/*#responsiveForm {
-  position: relative;
-}
-
-.form-inner-cont {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  padding: 80px;
-  padding-top: 120px;
-}*/
-
-
-/*Cart View*/
-#userCart {
-  padding-top: 100px;
-}
-
-.ion-trash-a {
-  font-size: 20px;
-}
-
-/*Checkout View*/
+/*//////////////////////*/
+/*////CHECKOUT VIEW////*/
+/*////////////////////*/
 #userCheckout {
   padding-top: 100px;
 }
 
-.userCheckout-form {
+.userCheckout-input {
   padding: 37.5px;
   margin: 50px 0;
 }
 
+.order-deets {
+  border: solid 3px #474544;
+  box-shadow: 5px 5px 5px #888888;
+}
 
-/*About View*/
+
+/*/////////////////////*/
+/*/////ABOUT VIEW/////*/
+/*///////////////////*/
 #about {
   padding-top: 100px;
 }
