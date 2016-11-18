@@ -18,9 +18,9 @@ app.config(function($urlRouterProvider, $stateProvider) {
     controller: 'letterCreateCtrl'
   })
 
-  .state('letterTypes', {
-    url: '/letterTypes',
-    templateUrl: 'views/letterTypes.html',
+  .state('letterCreate', {
+    url: '/letterCreate',
+    templateUrl: 'views/letterCreate.html',
     controller: 'letterCreateCtrl'
   })
 

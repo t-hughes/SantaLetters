@@ -92,8 +92,14 @@ $scope.saveFinalCustomer = function (data){
 };
 
 
-//Changes letterhead when thumbnail is clicked on the lettterTypes view
-$scope.current = 'scLetterHead';
+//NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
+// $scope.current = 'scLetterHead';
+
+$scope.savePersonalizedLtrData = function(data) {
+  console.log(data);
+  letterCreateSrv.savePersonalizedLtrData(data);
+};
+
 
 //Personalized Letter Changes
 

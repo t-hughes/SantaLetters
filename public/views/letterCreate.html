@@ -31,10 +31,11 @@
 <!--List Product Section End-->
 
 <div class="row">
+  <div class="container-fluid">
   <!-- TODO Style the paragraphs in the letter.-->
-      <div class="col-md-6" id="personalized-letter">
-          <img class="img-responsive" ng-src="img/{{current}}.jpg"/>
-          <div class="inner-content-wrapper">
+      <div class="col-lg-6 visible-lg-block" id="personalized-letter">
+          <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
+          <div class="personalized-content-wrapper">
 
               <p>Dear {{childFirstName}},</p>
 
@@ -48,11 +49,13 @@
 
               <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
-              <p>Merry Christmas! Love, Santa Claus</p>
+              <p>Merry Christmas!<br>
+                Love,<br>
+                Santa Claus</p>
           </div>
       </div>
 
-    <div class="col-md-6">
+    <div class="col-lg-6">
         <div id="santaQ-container">
             <h1 class="form-header">&bull; Personalization &bull;</h1><br>
             <h3 class="form-header">Answer the following questions so<span class="highlight">
@@ -115,11 +118,11 @@
         </div>
         <!-- // End container-->
     </div>
-
+</div>
 </div>
 
     <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
-    <!-- <div id="letterTypes"> -->
+    <!-- <div id="letterCreate"> -->
     <!-- <section class="container content-section text-right"> -->
     <!-- <div class="container-fluid"> -->
     <!-- <div class="row"> -->

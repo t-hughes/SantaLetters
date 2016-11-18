@@ -44,4 +44,19 @@ app.service('letterCreateSrv', function($http) {
       // console.log(finalCustomer);
     };
 
+
+//Saving Personalized Letter Data 
+    var personalizedLtrData = [];
+
+    this.createPersonalizedLtr = function() {
+      return personalizedLtrData;
+    };
+
+    this.savePersonalizedLtrData = function(data) {
+      personalizedLtrData.push(data);
+      console.log(personalizedLtrData);
+    };
+
+
+
 });
