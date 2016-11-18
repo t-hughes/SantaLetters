@@ -45,18 +45,16 @@ app.service('letterCreateSrv', function($http) {
     };
 
 
-//Saving Personalized Letter Data 
-    var personalizedLtrData = [];
+//Saving Personalized Letter Data
+    var personalLtrData = [];
 
-    this.createPersonalizedLtr = function() {
-      return personalizedLtrData;
+    this.createPersonalLtr = function() {
+      return personalLtrData;
     };
 
-    this.savePersonalizedLtrData = function(data) {
-      personalizedLtrData.push(data);
-      console.log(personalizedLtrData);
+    this.savePersonalLtrData = function(data) {
+      personalLtrData.push(data);
+      console.log(personalLtrData);
     };
-
-
-
+  
 });

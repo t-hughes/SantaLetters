@@ -198,11 +198,7 @@ p {
 }
 
 .btn-home {
-    border-radius: 30px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
+
 }
 
 /*///////////////////////////*/
@@ -299,16 +295,16 @@ input[type='text']:focus, [type='email']:focus, select:focus {
 }
 
 /*Form Button*/
-button.green {
+button.animate-green-button {
   font-family: 'Raleway', Arial, sans-serif;
   border: none;
   float: right;
   border-radius: 5px;
   color: #FFF;
   cursor: pointer;
-  padding: 10px 40px;
+  padding: 15px 40px;
   display: inline-block;
-  margin: 15px 30px;
+  margin: 40px 0;
   text-transform: uppercase;
   line-height: 1.5em;
   font-weight: 600;
@@ -319,7 +315,7 @@ button.green {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-button.green span {
+button.animate-green-button span {
   display: inline-block;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -327,7 +323,7 @@ button.green span {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-button.green i {
+button.animate-green-button i {
   font-size: 28px;
   text-align: center;
   width: 100%;
@@ -343,7 +339,7 @@ button.green i {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.green:before {
+button.animate-green-button:before {
   content: '';
   top: 0;
   left: 50%;
@@ -356,30 +352,30 @@ button.green:before {
   -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
-button.green:hover span,
-button.green.hover span {
+button.animate-green-button:hover span,
+button.animate-green-button.hover span {
   opacity: 0;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.green:hover i,
-button.green.hover i {
+button.animate-green-button:hover i,
+button.animate-green-button.hover i {
   opacity: 1;
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
-button.green:hover:before,
-button.green.hover:before {
+button.animate-green-button:hover:before,
+button.animate-green-button.hover:before {
   left: 0;
   right: 0;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-button.green:active:before {
+button.animate-green-button:active:before {
   background: rgba(255, 255, 255, 0.3);
 }
 
-button.green {
+button.animate-green-button {
   background-color: #9CD6AC;
 }
 
@@ -557,7 +553,7 @@ footer hr {
 
 .ornament-pagination {
   vertical-align: middle;
-  padding: 55px 5px;
+  padding: 45px 5px;
 }
 
 .ornament-pagination-p {

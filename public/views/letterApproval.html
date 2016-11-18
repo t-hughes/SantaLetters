@@ -1,6 +1,6 @@
 <!-- Ornament Header -->
 <div ng-include="'views/ornamentTemp.html'"></div>
-  <!-- TODO Set up a preview of the users letter with the info they inputted on the letterCreate view.   -->
+  <!-- TODO Need to get the data that is stored in the letterCreateSrv to display on the letter overview. Do i need to combine these in order to do the print PDF thing? NOTE ask Gunnar. -->
   <!-- TODO Add a button that takes them to the userCart -->
 
   <div id="personalized-letter-approval">
@@ -14,9 +14,9 @@
 
         <p>Your {{behaviorToShow.behavior}} told me you’ve been a very good {{genderToShow.gender}} this year, and that you would like {{prefixToShow.prefix}} {{presentType}} for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-        <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{friendName}} will be delighted with it on Christmas morning!</p>
+        <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{personalLtrData.friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{personalLtrData.friendName}} will be delighted with it on Christmas morning!</p>
 
-        <p>{{paragraphToShow.para}}</p>
+        <p>{{personalLtrData.paragraphToShow.para}}</p>
 
         <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
@@ -24,5 +24,6 @@
           Love,<br>
           Santa Claus</p>
     </div>
+    
   </div>
   </div>

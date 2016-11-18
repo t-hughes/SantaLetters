@@ -69,22 +69,22 @@
 
                 <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="field_guardian_name">
 
-                <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
+                <input ng-model="personalLtrData.childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
                 <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="field_child_name">
 
             <div class="form-group">
-                <select ng-options="item.name for item in selectAgeFilter" ng-model="ageToShow" name="field_age" class="field-input-age">
+                <select ng-options="item.name for item in selectAgeFilter" ng-model="personalLtrData.ageToShow" name="field_age" class="field-input-age">
                     <option value="" disabled hidden selected>Childs Age</option>
                 </select>
 
-                <select ng-options="item.name for item in selectGenderFilter" ng-model="genderToShow" name="field_present_prefix" class="field-select">
+                <select ng-options="item.name for item in selectGenderFilter" ng-model="personalLtrData.genderToShow" name="field_present_prefix" class="field-select">
                     <option value="" disabled hidden selected>Childs Gender</option>
                 </select>
             </div>
 
             <div class="form-group">
-              <select ng-options="item.name for item in selectBehaviorFilter" ng-model="behaviorToShow" name="field_behavior">
+              <select ng-options="item.name for item in selectBehaviorFilter" ng-model="personalLtrData.behaviorToShow" name="field_behavior">
                 <option value="" disabled hidden selected>Who Could Report The Childs Behavior?</option>
               </select>
             </div>
@@ -93,33 +93,34 @@
                 <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
                     <option value="" selected hidden disabled>---</option>
                 </select>
-                <input ng-model="presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
+                <input ng-model="personalLtrData.presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
 
                 <select ng-options="item.name for item in selectFriendFilter" ng-model="friendToShow" name="friend_type" class="field-select">
                     <option value="" selected hidden disabled>---</option>
                 </select>
-                <input ng-model="friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+                <input ng-model="personalLtrData.friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
             </div>
 
                 <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
                     <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
-                    <optgroup label="Pets">
+                    <!-- <optgroup label="Pets">
                     </optgroup>
                     <optgroup label="Development">
                     </optgroup>
                     <optgroup label="Activities">
                     </optgroup>
                     <optgroup label="Events">
-                    </optgroup>
+                    </optgroup> -->
                 </select>
-                <button ui-sref="letterApproval" class="green" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
-
             </div>
         </div>
         <!-- // End container-->
+          <button ng-click="savePersonalLtrData(personalLtrData)" ui-sref="letterApproval" class="animate-green-button btn-block" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
     </div>
 </div>
 </div>
+
+<pre>{{personalLtrData}}</pre>
 
     <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
     <!-- <div id="letterCreate"> -->
