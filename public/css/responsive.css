@@ -79,7 +79,8 @@
         padding-top: 30px;
     }
     #main p {
-        padding-top: 60px;
+        padding-top: initial;
+        letter-spacing: normal;
     }
 
     input {
@@ -100,6 +101,7 @@
     }
     h2 {
         font-size: 20px;
+        margin-top: 30px;
     }
     h3 {
         font-size: 12px;
@@ -123,6 +125,10 @@
     #ornament-wrapper {
       display: none;
     }
+
+    #clouds {
+      display: none;
+    }
 }
 
 /* Even Smaller Mobile Devices */
@@ -138,6 +144,14 @@
     #ornament-wrapper {
       display: none;
     }
+    #main p {
+        padding-top: 11px;
+        letter-spacing: normal;
+    }
+
+    #clouds {
+      display: none;
+    }
 }
 
 /* Smallest Mobile Devices */
@@ -149,13 +163,18 @@
         font-size: 17px;
     }
     #main p {
-        padding-top: 40px;
+      padding-top: 30px;
+      letter-spacing: normal;
     }
     #overview {
         padding-top: 50px;
     }
-    
+
     #ornament-wrapper {
+      display: none;
+    }
+
+    #clouds {
       display: none;
     }
 }

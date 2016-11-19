@@ -2,108 +2,131 @@
 <div ng-include="'views/ornamentTemp.html'"></div>
 
 <!-- TODO Line the images up 2x2 and give them a background and boxshadow -->
-<div id="products" class="container">
-    <div class="row letter-workshop-header text-center">
-        <h2>Welcome To <span class="highlight">Santa's</span> Letter Workshop!</h2>
-    </div>
-
-    <div class="col-md-6" ng-repeat="product in products">
-        <!--List Product Image End-->
-        <div class="col-md-4 text-center">
-            <img class="product-img" ng-src="{{product.product_image}}">
+<div id="products">
+    <div class="container">
+        <div class="row letter-workshop-header text-center">
+            <h2>Welcome To
+                <span class="highlight">Santa's</span>
+                Letter Workshop!</h2>
+            <p>Pick a letter package &amp; personalize your letter below.</p>
+            <hr>
         </div>
-        <!-- List Product Image End -->
 
-        <!--List Product Description-->
-        <div class="col-md-8">
-            <h4>{{product.product_name}}</h4>
-            <p>{{product.product_desc}}</p>
-            <p>
-                <span class="highlight">{{product.product_price | currency}}</span>
-            </p>
-            <button class="btn btn-success" ng-click="addProductToCart(product)">Select Package</button>
-            <button type="button" class="btn btn-danger">
-                <span class="glyphicon glyphicon-remove" ng-click="removeProduct($index)"></span>
-            </button>
+        <div class="row product-chooser">
+            <div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="product in products">
+                <div ng-class="{'selected-product':isSelected === $index}" class="product-chooser-item">
+                    <img ng-src="{{product.product_image}}" class="img-rounded img-responsive" alt="">
+                    <div>
+                        <span class="title">{{product.product_name}}</span>
+                        <span class="description">{{product.product_desc}}</span>
+                        <button class="btn btn-success" ng-click="addProductToCart(product); activeProduct($index)">Select Package</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <!--List Product Section End-->
 
-<div class="row">
-  <div class="container-fluid">
-  <!-- TODO Style the paragraphs in the letter.-->
-      <div class="col-lg-6 visible-lg-block" id="personalized-letter">
-          <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
-          <div class="personalized-content-wrapper">
+<div id=letter-workshop>
+    <div class="row letter-workshop-header text-center">
+        <h2>Watch
+            <span class="highlight">Santa</span>
+            Write your letter right before your eyes!</h2>
+        <p>Fill out the form &amp; watch as your letter gets personalized.</p>
+        <hr>
+    </div>
 
-              <p>Dear {{childFirstName}},</p>
+    <div class="row">
+        <div class="container-fluid">
+            <!-- TODO Style the paragraphs in the letter.-->
+            <div class="col-lg-6 visible-lg-block" id="personalized-letter">
+                <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
+                <div class="personalized-content-wrapper">
 
-              <p>Ho, Ho, Ho, Merry Christmas! {{ageToShow.list}}</p>
+                    <p>Dear
+                        {{childFirstName}},</p>
 
-              <p>Your {{behaviorToShow.behavior}} told me you’ve been a very good {{genderToShow.gender}} this year, and that you would like {{prefixToShow.prefix}} {{presentType}} for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+                    <p>Ho, Ho, Ho, Merry Christmas!
+                        {{ageToShow.list}}</p>
 
-              <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your {{friendToShow.friend}}, {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that {{friendName}} will be delighted with it on Christmas morning!</p>
+                    <p>Your
+                        {{behaviorToShow.behavior}}
+                        told me you’ve been a very good
+                        {{genderToShow.gender}}
+                        this year, and that you would like
+                        {{prefixToShow.prefix}}
+                        {{presentType}}
+                        for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-              <p>{{paragraphToShow.para}}</p>
+                    <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
+                        {{friendToShow.friend}},
+                        {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
+                        {{friendName}}
+                        will be delighted with it on Christmas morning!</p>
 
-              <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
+                    <p>{{paragraphToShow.para}}</p>
 
-              <p>Merry Christmas!<br>
-                Love,<br>
-                Santa Claus</p>
-          </div>
-      </div>
+                    <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
-    <div class="col-lg-6">
-        <div id="santaQ-container">
-            <h1 class="form-header">&bull; Personalization &bull;</h1><br>
-            <h3 class="form-header">Answer the following questions so<span class="highlight">
-                    Santa</span>
-                can personalize your letter!</h3>
-            <div class="underline"></div>
-
-            <div class="userDetails-form">
-
-                <input type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="field_guardian_name">
-
-                <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="field_guardian_name">
-
-                <input ng-model="personalLtrData.childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
-
-                <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="field_child_name">
-
-            <div class="form-group">
-                <select ng-options="item.name for item in selectAgeFilter" ng-model="personalLtrData.ageToShow" name="field_age" class="field-input-age">
-                    <option value="" disabled hidden selected>Childs Age</option>
-                </select>
-
-                <select ng-options="item.name for item in selectGenderFilter" ng-model="personalLtrData.genderToShow" name="field_present_prefix" class="field-select">
-                    <option value="" disabled hidden selected>Childs Gender</option>
-                </select>
+                    <p>Merry Christmas!<br>
+                        Love,<br>
+                        Santa Claus</p>
+                </div>
             </div>
 
-            <div class="form-group">
-              <select ng-options="item.name for item in selectBehaviorFilter" ng-model="personalLtrData.behaviorToShow" name="field_behavior">
-                <option value="" disabled hidden selected>Who Could Report The Childs Behavior?</option>
-              </select>
-            </div>
+            <div class="col-lg-6">
+                <div id="santaQ-container">
+                    <h1 class="form-header">&bull; Personalization &bull;</h1><br>
+                    <h3 class="form-header">Answer the following questions so<span class="highlight">
+                            Santa</span>
+                        can personalize your letter!</h3>
+                    <div class="underline"></div>
+                    <form name="letterDetails">
+                        <div class="userDetails-form">
 
-            <div class="form-group">
-                <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
-                    <option value="" selected hidden disabled>---</option>
-                </select>
-                <input ng-model="personalLtrData.presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
+                            <div class="form-group">
+                                <input ng-model="user.name" type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="field_guardian_name" required>
+                                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Name is required.</p>
+                            </div>
 
-                <select ng-options="item.name for item in selectFriendFilter" ng-model="friendToShow" name="friend_type" class="field-select">
-                    <option value="" selected hidden disabled>---</option>
-                </select>
-                <input ng-model="personalLtrData.friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
-            </div>
+                            <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="field_guardian_name">
 
-                <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
-                    <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
-                    <!-- <optgroup label="Pets">
+                            <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
+
+                            <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="field_child_name">
+
+                            <div class="form-group">
+                                <select ng-options="item.name for item in selectAgeFilter" ng-model="ageToShow" name="field_age" class="field-input-age">
+                                    <option value="" disabled hidden selected>Childs Age</option>
+                                </select>
+
+                                <select ng-options="item.name for item in selectGenderFilter" ng-model="genderToShow" name="field_present_prefix" class="field-select">
+                                    <option value="" disabled hidden selected>Childs Gender</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <select ng-options="item.name for item in selectBehaviorFilter" ng-model="behaviorToShow" name="field_behavior">
+                                    <option value="" disabled hidden selected>Who Could Report The Childs Behavior?</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
+                                    <option value="" selected hidden disabled>---</option>
+                                </select>
+                                <input ng-model="presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
+
+                                <select ng-options="item.name for item in selectFriendFilter" ng-model="friendToShow" name="friend_type" class="field-select">
+                                    <option value="" selected hidden disabled>---</option>
+                                </select>
+                                <input ng-model="friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+                            </div>
+
+                            <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
+                                <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
+                                <!-- <optgroup label="Pets">
                     </optgroup>
                     <optgroup label="Development">
                     </optgroup>
@@ -111,23 +134,32 @@
                     </optgroup>
                     <optgroup label="Events">
                     </optgroup> -->
-                </select>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- // End container-->
+                </div>
+                <button ui-sref="userDetails" class="letterCreate-button red btn-block" type="submit">
+                    <span>Back to Details and Delivery Info</span>
+                    <i class="ionicons ion-arrow-left-a"></i>
+                </button>
+                <button ng-click="savePersonalLtrData(personalLtrData)" ui-sref="letterApproval" class="letterCreate-button red btn-block" type="submit">
+                    <span>To Letter Approval</span>
+                    <i class="ionicons ion-arrow-right-a"></i>
+                </button>
             </div>
         </div>
-        <!-- // End container-->
-          <button ng-click="savePersonalLtrData(personalLtrData)" ui-sref="letterApproval" class="animate-green-button btn-block" type="submit" ><span>Next</span><i class="ion-arrow-right-c"></i></button>
     </div>
-</div>
 </div>
 
 <pre>{{personalLtrData}}</pre>
 
-    <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
-    <!-- <div id="letterCreate"> -->
-    <!-- <section class="container content-section text-right"> -->
-    <!-- <div class="container-fluid"> -->
-    <!-- <div class="row"> -->
-    <!-- <div class="col-md-3">
+<!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
+<!-- <div id="letterCreate"> -->
+<!-- <section class="container content-section text-right"> -->
+<!-- <div class="container-fluid"> -->
+<!-- <div class="row"> -->
+<!-- <div class="col-md-3">
                     <img class="img-responsive" src="img/scLetterHead.jpg" ng-click="current='scLetterHead'"/>
                     <img class="img-responsive" src="img/scLetterHead2.jpg" ng-click="current='scLetterHead2'"/>
                 </div>
@@ -135,10 +167,10 @@
                     <img class="img-responsive" src="img/scLetterHead3.jpg" ng-click="current='scLetterHead3'"/>
                     <img class="img-responsive" src="img/scLetterHead4.jpg" ng-click="current='scLetterHead4'"/>
                 </div> -->
-    <!-- <div class="col-md-9"> -->
-    <!-- <form id="responsiveForm"> -->
-    <!-- <img class="img-responsive" ng-src="img/{{current}}.jpg"/> -->
-    <!-- <div class="form-inner-cont">
+<!-- <div class="col-md-9"> -->
+<!-- <form id="responsiveForm"> -->
+<!-- <img class="img-responsive" ng-src="img/{{current}}.jpg"/> -->
+<!-- <div class="form-inner-cont">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" id="name" name="name"/>
@@ -156,9 +188,9 @@
                         </div>
                       </div> -->
 
-    <!-- </div> -->
-    <!-- </form> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </section> -->
+<!-- </div> -->
+<!-- </form> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </section> -->

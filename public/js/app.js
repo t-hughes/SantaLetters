@@ -9,7 +9,6 @@ app.config(function($urlRouterProvider, $stateProvider) {
   .state('home', {
     url: '/home',
     templateUrl: 'views/home.html',
-    controller: 'homeCtrl'
   })
 
   .state('userDetails', {

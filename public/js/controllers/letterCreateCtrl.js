@@ -13,55 +13,25 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
       $scope.products = response.data;
   });
 
-
 /////////////////////
 // Cart & Checkout//
 ///////////////////
 //Sharing what is on cartCtrl so details can be shown in the order details on userCheckout
 $scope.cart = cartSrv.getCart();
 
+$scope.activeProduct = function(index) {
+    $scope.isSelected = index;
+};
 
 //Adds Product to Cart
 $scope.addProductToCart = function(Item) {
   $scope.cartStorage = cartSrv.cartStorage(Item);
-// Alert when something is added to the cart
-swal({
-type: 'success',
-title: 'You have selected the ' + Item.product_name,
-text: 'Message will close automatically after 5 seconds or click',
-confirmButtonColor: '#9CD6AC',
-confirmButtonText: 'Okay',
-timer: 5000
-}).then(
-function () {},
-// handling the promise rejection
-function (dismiss) {
-if (dismiss === 'timer') {
-  console.log('I was closed by the timer');
-}
-});
 };
 
 
 // Removes Products from User's Cart
 $scope.removeProduct = function($index) {
   cartSrv.removeProduct($index);
-  // Alert when something is added to the cart
-  swal({
-  type: 'error',
-  title: 'You have removed the ' + products.product_name, //cant get it to bring in the item name//
-  text: 'Message will close automatically after 5 seconds or click',
-  confirmButtonColor: '#D9534F',
-  confirmButtonText: 'Okay',
-  timer: 5000
-  }).then(
-  function () {},
-  // handling the promise rejection
-  function (dismiss) {
-  if (dismiss === 'timer') {
-    console.log('I was closed by the timer');
-  }
-  });
 };
 
 $scope.subTotal = function() {
@@ -95,7 +65,11 @@ $scope.saveFinalCustomer = function (data){
 //NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
 // $scope.current = 'scLetterHead';
 
-$scope.personalLtrData = letterCreateSrv.createPersonalLtr;
+
+// Personalized Letter Details
+
+
+
 
 $scope.savePersonalLtrData = function(data) {
   console.log(data);
@@ -193,5 +167,13 @@ $scope.selectEventFilter = [
   {id: 28, name: "Child visited the ocean", para: "The Elves got word of your visit to the ocean this year. They told me you had lots of fun. Would you recommend the beach you visited? Mrs. Claus has been taking such good care of me as I prepare to deliver all of these gifts on Christmas Eve, I wanted to surprise her with a vacation to the ocean this summer!"},
   {id: 29, name: "Child visited the mountains", para: "Rudolph went for a test flight around the mountains today and he told me he saw you walking about on the mountain trails. He said you looked like you were enjoying yourself and having lots of fun! What is the neatest thing you have seen in the mountains? I have always loved the mountains, but my boots are made for soft snow! Maybe I should ask the elves to teach me how to make a nice pair of black hiking boots. Hopefully they can teach me how to put bells on them! "},
 ];
+
+
+// check to make sure the form is completely valid
+$scope.submitForm = function() {
+    if ($scope.userForm.$valid) {
+        alert('our form is amazing');
+    }
+};
 
 });

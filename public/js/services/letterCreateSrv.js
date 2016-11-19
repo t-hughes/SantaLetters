@@ -10,7 +10,7 @@ app.service('letterCreateSrv', function($http) {
     this.getProduct = function(id) {
         return $http({
           method: 'GET',
-          url: 'http://localhost:2000/api/products/'
+          url: 'http://localhost:2000/api/products'
         });
       };
 
@@ -46,15 +46,15 @@ app.service('letterCreateSrv', function($http) {
 
 
 //Saving Personalized Letter Data
-    var personalLtrData = [];
+    var personalLtrData = {};
 
-    this.createPersonalLtr = function() {
+    this.getPersonalLtr = function() {
       return personalLtrData;
     };
 
     this.savePersonalLtrData = function(data) {
-      personalLtrData.push(data);
+      personalLtrData = data;
       console.log(personalLtrData);
     };
-  
+
 });
