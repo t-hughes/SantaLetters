@@ -19,7 +19,7 @@
                     <div>
                         <span class="title">{{product.product_name}}</span>
                         <span class="description">{{product.product_desc}}</span>
-                        <button class="btn btn-success" ng-click="addProductToCart(product); activeProduct($index)">Select Package</button>
+                        <button class="btn btn-success" ng-click="savePackageData({packageData: product}); activeProduct($index)">Select Package</button>
                     </div>
                 </div>
             </div>
@@ -45,29 +45,29 @@
                 <div class="personalized-content-wrapper">
 
                     <p>Dear
-                        {{childFirstName}},</p>
+                        {{letterData.childName}},</p>
 
                     <p>Ho, Ho, Ho, Merry Christmas!
-                        {{ageToShow.list}}</p>
+                        {{letterData.ageToShow.list}}</p>
 
                     <p>Your
-                        {{behaviorToShow.behavior}}
+                        {{letterData.behaviorToShow.behavior}}
                         told me you’ve been a very good
-                        {{genderToShow.gender}}
+                        {{letterData.genderToShow.gender}}
                         this year, and that you would like
-                        {{prefixToShow.prefix}}
-                        {{presentType}}
+                        {{letterData.prefixToShow.prefix}}
+                        {{letterData.presentType}}
                         for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-                    <p>{{childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
-                        {{friendToShow.friend}},
-                        {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
-                        {{friendName}}
+                    <p>{{letterData.childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
+                        {{letterData.friendToShow.friend}},
+                        {{letterData.friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
+                        {{letterData.friendName}}
                         will be delighted with it on Christmas morning!</p>
 
-                    <p>{{paragraphToShow.para}}</p>
+                    <p>{{letterData.paragraphToShow.para}}</p>
 
-                    <p>{{childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
+                    <p>{{letterData.childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
                     <p>Merry Christmas!<br>
                         Love,<br>
@@ -85,65 +85,45 @@
                     <form name="letterDetails">
                         <div class="userDetails-form">
 
-                            <div class="form-group">
-                                <input ng-model="user.name" type="text" placeholder="Childs parent or guardian first name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian first name'" name="field_guardian_name" required>
-                                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Name is required.</p>
-                            </div>
 
-                            <input type="text" placeholder="Childs parent or guardian last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs parent or guardian last name'" name="field_guardian_name">
-
-                            <input ng-model="childFirstName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
-
-                            <input type="text" placeholder="Childs Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs Last Name'" name="field_child_name">
+                            <input ng-model="letterData.childName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
                             <div class="form-group">
-                                <select ng-options="item.name for item in selectAgeFilter" ng-model="ageToShow" name="field_age" class="field-input-age">
+                                <select ng-options="item.name for item in selectAgeFilter" ng-model="letterData.ageToShow" name="field_age" class="field-input-age">
                                     <option value="" disabled hidden selected>Childs Age</option>
                                 </select>
 
-                                <select ng-options="item.name for item in selectGenderFilter" ng-model="genderToShow" name="field_present_prefix" class="field-select">
+                                <select ng-options="item.name for item in selectGenderFilter" ng-model="letterData.genderToShow" name="field_present_prefix" class="field-select">
                                     <option value="" disabled hidden selected>Childs Gender</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <select ng-options="item.name for item in selectBehaviorFilter" ng-model="behaviorToShow" name="field_behavior">
+                                <select ng-options="item.name for item in selectBehaviorFilter" ng-model="letterData.behaviorToShow" name="field_behavior">
                                     <option value="" disabled hidden selected>Who Could Report The Childs Behavior?</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <select ng-options="item.name for item in selectPrefixFilter" ng-model="prefixToShow" name="present_prefix" class="field-select">
+                                <select ng-options="item.name for item in selectPrefixFilter" ng-model="letterData.prefixToShow" name="present_prefix" class="field-select">
                                     <option value="" selected hidden disabled>---</option>
                                 </select>
-                                <input ng-model="presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
+                                <input ng-model="letterData.presentType" class="field-input" type="text" placeholder="A gift the Child has asked Santa for" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A gift the Child has asked Santa for'" name="">
 
-                                <select ng-options="item.name for item in selectFriendFilter" ng-model="friendToShow" name="friend_type" class="field-select">
+                                <select ng-options="item.name for item in selectFriendFilter" ng-model="letterData.friendToShow" name="friend_type" class="field-select">
                                     <option value="" selected hidden disabled>---</option>
                                 </select>
-                                <input ng-model="friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+                                <input ng-model="letterData.friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
                             </div>
 
-                            <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="paragraphToShow">
+                            <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="letterData.paragraphToShow">
                                 <option value="" disabled hidden selected>Select an event that occurred in the past 12 months</option>
-                                <!-- <optgroup label="Pets">
-                    </optgroup>
-                    <optgroup label="Development">
-                    </optgroup>
-                    <optgroup label="Activities">
-                    </optgroup>
-                    <optgroup label="Events">
-                    </optgroup> -->
                             </select>
                         </div>
                     </form>
                     <!-- // End container-->
                 </div>
-                <button ui-sref="userDetails" class="letterCreate-button red btn-block" type="submit">
-                    <span>Back to Details and Delivery Info</span>
-                    <i class="ionicons ion-arrow-left-a"></i>
-                </button>
-                <button ng-click="savePersonalLtrData(personalLtrData)" ui-sref="letterApproval" class="letterCreate-button red btn-block" type="submit">
+                <button ng-click="saveOrderData({letterData: letterData});" ui-sref="letterApproval" class="letterCreate-button red btn-block" type="submit">
                     <span>To Letter Approval</span>
                     <i class="ionicons ion-arrow-right-a"></i>
                 </button>
@@ -152,7 +132,6 @@
     </div>
 </div>
 
-<pre>{{personalLtrData}}</pre>
 
 <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->
 <!-- <div id="letterCreate"> -->

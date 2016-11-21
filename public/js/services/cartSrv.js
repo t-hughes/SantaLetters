@@ -1,22 +1,22 @@
 app.service('cartSrv', function () {
 
-  var cart = [];
+  // var cart = [];
 
   //Adds Products to User's Cart
-  this.cartStorage = function(Item) {
-    cart.push(Item);
-    console.log(cart);
-  };
+  // this.cartStorage = function(Item) {
+  //   cart.push(Item);
+  //   console.log(cart);
+  // };
 
   //Gets Products from User's Cart
-  this.getCart = function() {
-    return cart;
-  };
+  // this.getCart = function() {
+  //   return cart;
+  // };
 
   //Deletes Products from User's Cart
-  this.removeProduct = function($index) {
-    cart.splice($index, 1);
-  };
+  // this.removeProduct = function($index) {
+  //   cart.splice($index, 1);
+  // };
 
 
 

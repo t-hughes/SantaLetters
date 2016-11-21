@@ -2,7 +2,7 @@
 /*///GENERAL STYLES///*/
 /*//////////////////////*/
 
-#clouds {
+#snow {
 margin-top: -82px;
 fill: #FFF;
 stroke: #fff;
@@ -197,63 +197,95 @@ p {
     margin-top: 50px;
 }
 
-button.btn-home {
+button.home-button {
   font-family: 'Raleway', Arial, sans-serif;
   border: none;
   float: right;
   background-color: #D9534F;
   border-radius: 5px;
-  color: #ffffff;
+  color: #FFF;
   cursor: pointer;
-  padding: 10px 30px;
+  padding: 10px 40px;
   display: inline-block;
-  margin: 15px 30px;
+  margin: 15px 5px;
   text-transform: uppercase;
   line-height: 1.5em;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1em;
   outline: none;
   position: relative;
+  opacity: 1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
-button.btn-home span {
+button.home-button span {
   display: inline-block;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   opacity: 0.8;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
-
-button.btn-home i {
-  font-size: 21px;
-  right: 22px;
+button.home-button i {
+  font-size: 28px;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  display: block;
   position: absolute;
   opacity: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+button.home-button:before {
+  border-radius: 3px;
+  content: '';
+  top: 3px;
+  bottom: 3px;
+  left: 50%;
+  right: 50%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
 }
 
-button.btn-home:hover span,
-button.btn-home.hover span {
-  -webkit-transform: translate3d(-10px, 0px, 0px);
-  transform: translate3d(-10px, 0px, 0px);
+button.home-button:hover.red,
+button.home-button.hover.red {
+  color: #5CB85C;
+}
+
+button.home-button:hover span,
+button.home-button.hover span {
+  opacity: 0;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+button.home-button:hover i,
+button.home-button.hover i {
   opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+button.home-button:hover:before,
+button.home-button.hover:before {
+  left: 3px;
+  right: 3px;
+  background: #FFF;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+button.home-button:active:before {
+  background: rgba(255, 255, 255, 0.7);
 }
 
-button.btn-home:hover i,
-button.btn-home.hover i {
-  opacity: 0.8;
-}
-
-button.btn-home:active span {
-  -webkit-transform: translate3d(-14px, 0px, 0px);
-  transform: translate3d(-14px, 0px, 0px);
-}
-
-button.btn-home:active i {
-  right: 18px;
-}
 
 
 /*///////////////////////*/
@@ -261,20 +293,13 @@ button.btn-home:active i {
 /*//////////////////////*/
 #userDetails {
   padding-top: 100px;
-  display: flex;
-  justify-content: space-around;
 }
 
 /*Form*/
 #container {
   border: solid 3px #474544;
-  max-width: 768px;
-  width: 100%;
   box-shadow: 5px 5px 5px #888888;
-}
-
-.left-form {
-  margin-right: 25px;
+  border-radius: 4px;
 }
 
 .userDetails-input {
@@ -407,7 +432,7 @@ button.userDetails-button:before {
 
 button.userDetails-button:hover.red,
 button.userDetails-button.hover.red {
-  color: #962d22;
+  color: #D9534F;
 }
 
 button.userDetails-button:hover span,
@@ -638,7 +663,7 @@ button.letterCreate-button:before {
 
 button.letterCreate-button:hover.red,
 button.letterCreate-button.hover.red {
-  color: #962d22;
+  color: #D9534F;
 }
 
 button.letterCreate-button:hover span,
@@ -756,7 +781,7 @@ button.approval-button:before {
 
 button.approval-button:hover.red,
 button.approval-button.hover.red {
-  color: #962d22;
+  color: #D9534F;
 }
 
 button.approval-button:hover span,
@@ -789,7 +814,7 @@ button.approval-button:active:before {
 /*////CHECKOUT VIEW////*/
 /*////////////////////*/
 #userCheckout {
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
 .userCheckout-input {
@@ -800,6 +825,7 @@ button.approval-button:active:before {
 .order-deets {
   border: solid 3px #474544;
   box-shadow: 5px 5px 5px #888888;
+  margin-top: 25px;
 }
 
 

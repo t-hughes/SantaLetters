@@ -1,5 +1,10 @@
 app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, cartSrv) {
 
+//NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
+  // $scope.current = 'scLetterHead';
+
+
+
 /////////////
 // Products//
 ////////////
@@ -13,29 +18,33 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
       $scope.products = response.data;
   });
 
+//This adds the red border and gray background when the package is selected.
+  $scope.activeProduct = function(index) {
+      $scope.isSelected = index;
+  };
+
 /////////////////////
 // Cart & Checkout//
 ///////////////////
 //Sharing what is on cartCtrl so details can be shown in the order details on userCheckout
-$scope.cart = cartSrv.getCart();
-
-$scope.activeProduct = function(index) {
-    $scope.isSelected = index;
-};
-
-//Adds Product to Cart
-$scope.addProductToCart = function(Item) {
-  $scope.cartStorage = cartSrv.cartStorage(Item);
-};
+// $scope.cart = cartSrv.getCart();
+//
+//
+// //Adds Product to Cart
+// $scope.addProductToCart = function(Item) {
+//   $scope.cartStorage = cartSrv.cartStorage(Item);
+// };
 
 
 // Removes Products from User's Cart
-$scope.removeProduct = function($index) {
-  cartSrv.removeProduct($index);
-};
+// $scope.removeProduct = function($index) {
+//   cartSrv.removeProduct($index);
+// };
 
+
+//Calculates subtotal, tax, and total
 $scope.subTotal = function() {
-  return $scope.cart.reduce(function(previous, current) {
+  return $scope.order.reduce(function(previous, current) {
   return  +current.product_price + previous;
   }, 0);
 };
@@ -51,30 +60,39 @@ $scope.total = function() {
 
 //User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
 
-$scope.saveCustomerData = function(data) {
+// $scope.saveCustomerData = function(data) {
+//   console.log(data);
+//   letterCreateSrv.saveCustomerData(data);
+// };
+//
+// $scope.saveFinalCustomer = function (data){
+//   $scope.saveCustomerData(data);
+//   letterCreateSrv.createFinalCustomer();
+// };
+
+
+// Order data
+$scope.order = $scope.getOrderData;
+$scope.getOrderData = function() {
+  $scope.order = letterCreateSrv.getOrderData();
+};
+
+$scope.savePackageData = function(data) {
   console.log(data);
-  letterCreateSrv.saveCustomerData(data);
+  letterCreateSrv.savePackageData(data);
 };
 
-$scope.saveFinalCustomer = function (data){
-  $scope.saveCustomerData(data);
-  letterCreateSrv.createFinalCustomer();
-};
-
-
-//NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
-// $scope.current = 'scLetterHead';
-
-
-// Personalized Letter Details
-
-
-
-
-$scope.savePersonalLtrData = function(data) {
+$scope.saveOrderData = function(data) {
   console.log(data);
-  letterCreateSrv.savePersonalLtrData(data);
+  letterCreateSrv.saveOrderData(data);
 };
+
+
+
+// $scope.savePersonalLtrData = function(data) {
+//   console.log(data);
+//   letterCreateSrv.savePersonalLtrData(data);
+// };
 
 
 //Personalized Letter Changes
@@ -169,11 +187,5 @@ $scope.selectEventFilter = [
 ];
 
 
-// check to make sure the form is completely valid
-$scope.submitForm = function() {
-    if ($scope.userForm.$valid) {
-        alert('our form is amazing');
-    }
-};
 
 });
