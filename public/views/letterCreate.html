@@ -59,7 +59,7 @@
                         {{letterData.presentType}}
                         for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-                    <p>{{letterData.childFirstName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
+                    <p>{{letterData.childName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
                         {{letterData.friendToShow.friend}},
                         {{letterData.friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
                         {{letterData.friendName}}
@@ -67,7 +67,7 @@
 
                     <p>{{letterData.paragraphToShow.para}}</p>
 
-                    <p>{{letterData.childFirstName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
+                    <p>{{letterData.childName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
                     <p>Merry Christmas!<br>
                         Love,<br>
@@ -86,7 +86,7 @@
                         <div class="userDetails-form">
 
 
-                            <input ng-model="letterData.childName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
+                            <input ng-model="letterData.childName" type="text" placeholder="ChildName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
                             <div class="form-group">
                                 <select ng-options="item.name for item in selectAgeFilter" ng-model="letterData.ageToShow" name="field_age" class="field-input-age">

@@ -3,8 +3,6 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
 //NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
   // $scope.current = 'scLetterHead';
 
-
-
 /////////////
 // Products//
 ////////////
@@ -23,48 +21,9 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
       $scope.isSelected = index;
   };
 
-/////////////////////
-// Cart & Checkout//
-///////////////////
-//Sharing what is on cartCtrl so details can be shown in the order details on userCheckout
-// $scope.cart = cartSrv.getCart();
-//
-//
-// //Adds Product to Cart
-// $scope.addProductToCart = function(Item) {
-//   $scope.cartStorage = cartSrv.cartStorage(Item);
-// };
-
-
-// Removes Products from User's Cart
-// $scope.removeProduct = function($index) {
-//   cartSrv.removeProduct($index);
-// };
-
-
-//Calculates subtotal, tax, and total
-$scope.subTotal = function() {
-  return $scope.order.reduce(function(previous, current) {
-  return  +current.product_price + previous;
-  }, 0);
-};
-
-$scope.taxCalc = function () {
-return $scope.subTotal() * 0.0685;
-};
-
-$scope.total = function() {
-  return $scope.subTotal() + $scope.taxCalc();
-};
-
 
 //User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
 
-// $scope.saveCustomerData = function(data) {
-//   console.log(data);
-//   letterCreateSrv.saveCustomerData(data);
-// };
-//
 // $scope.saveFinalCustomer = function (data){
 //   $scope.saveCustomerData(data);
 //   letterCreateSrv.createFinalCustomer();
@@ -72,9 +31,11 @@ $scope.total = function() {
 
 
 // Order data
+
 $scope.order = $scope.getOrderData;
 $scope.getOrderData = function() {
   $scope.order = letterCreateSrv.getOrderData();
+  // $scope.order[1] = $scope.letterData;
 };
 
 $scope.savePackageData = function(data) {
@@ -82,21 +43,17 @@ $scope.savePackageData = function(data) {
   letterCreateSrv.savePackageData(data);
 };
 
+
 $scope.saveOrderData = function(data) {
   console.log(data);
   letterCreateSrv.saveOrderData(data);
 };
 
 
-
-// $scope.savePersonalLtrData = function(data) {
-//   console.log(data);
-//   letterCreateSrv.savePersonalLtrData(data);
-// };
-
-
-//Personalized Letter Changes
-
+////////////////////////////////
+//////////ng-options////////////
+//Personalized Letter Changes///
+///////////////////////////////
 $scope.selectAgeFilter = [
   {id: 0, name: "Childs Age", enabled: false},
   {id: 1, name: "Newborn to 12 months old", list: "I want to first congratulate you for making it on the the Nice list so quickly for your very first Christmas!"},
@@ -128,7 +85,7 @@ $scope.selectGenderFilter = [
 $scope.selectBehaviorFilter = [
   {id: 0, name: "Who Could Report The Childs Behavior?", enabled: false},
   {id: 1, name: "Mom", behavior: "Mom"},
-  {id: 2, name: "Dad", behavior: ""},
+  {id: 2, name: "Dad", behavior: "Dad"},
   {id: 3, name: "Mom & Dad", behavior: "Mom & Dad"},
   {id: 4, name: "Grandma", behavior: "Grandma"},
   {id: 5, name: "Grandpa", behavior: "Grandpa"},

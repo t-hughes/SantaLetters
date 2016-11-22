@@ -30,7 +30,8 @@ let endpoints = [
   'customers',
   'products',
   'orders',
-  'order_details'
+  'order_details',
+  'letter_personalization'
 ];
 
 endpoints.forEach(endpoint => {

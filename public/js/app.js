@@ -11,12 +11,6 @@ app.config(function($urlRouterProvider, $stateProvider) {
     templateUrl: 'views/home.html',
   })
 
-  .state('userDetails', {
-    url: '/userDetails',
-    templateUrl: 'views/userDetails.html',
-    controller: 'letterCreateCtrl'
-  })
-
   .state('letterCreate', {
     url: '/letterCreate',
     templateUrl: 'views/letterCreate.html',
@@ -27,12 +21,6 @@ app.config(function($urlRouterProvider, $stateProvider) {
     url: '/letterApproval',
     templateUrl: 'views/letterApproval.html',
     controller: 'letterCreateCtrl'
-  })
-
-  .state('userCart', {
-    url: '/userCart',
-    templateUrl: 'views/userCart.html',
-    controller: 'cartCtrl'
   })
 
   .state('userCheckout',{

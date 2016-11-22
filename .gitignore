@@ -3,3 +3,4 @@ config.js
 tableOutlines.sql
 public/dist/bundle.js
 npm-debug.log
+bootstrap-validator/

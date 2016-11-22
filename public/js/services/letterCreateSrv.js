@@ -14,19 +14,7 @@ app.service('letterCreateSrv', function($http) {
         });
       };
 
-//Saving customer name, email, PH#, mailing streets, city, state, zip and storing it in the array until it posts to the DB.
-    // var customerData = [];
-    //
-    // this.createCustomer = function() {
-    //   return customerData;
-    // };
-    //
-    // this.saveCustomerData = function(data) {
-    //   customerData.push(data);
-    //   console.log(customerData);
-    // };
-
-//Sends all customer data to DB
+//Sends all data to DB
     // this.createFinalCustomer = function() {
     //   var finalCustomer = customerData.reduce(function(result, currentObject) {
     //     for(var key in currentObject) {
@@ -43,20 +31,6 @@ app.service('letterCreateSrv', function($http) {
       // });
       // console.log(finalCustomer);
     // };
-
-
-//Saving Personalized Letter Data
-    // var personalLtrData = {};
-    //
-    // this.getPersonalLtr = function() {
-    //   return personalLtrData;
-    // };
-    //
-    // this.savePersonalLtrData = function(data) {
-    //   personalLtrData = data;
-    //   console.log(personalLtrData);
-    // };
-
 
 
 var order = [];
