@@ -10,7 +10,7 @@ app.service('letterCreateSrv', function($http) {
     this.getProduct = function(id) {
         return $http({
           method: 'GET',
-          url: 'http://localhost:2000/api/products'
+          url: 'http://localhost:2000/api/products/'
         });
       };
 
@@ -50,7 +50,7 @@ return order;
 
 this.saveOrderData = function(data) {
   order.push(data);
-  console.log(order);
+  console.log('SAVED TO SERVICE...', order);
 };
 
 });

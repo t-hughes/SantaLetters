@@ -1,163 +1,203 @@
 <!-- Ornament Header -->
 <div ng-include="'views/ornamentTemp.html'"></div>
 
-
 <!-- TODO Hookup these form details so they get included in the order array on the backend -->
 <!-- TODO Accept CC payment/possibly implement stripe -->
 <!-- TODO Accept Paypal? -->
-<div id="userDetails" class="container">
-    <div id="container" class="row">
-        <h1 class="form-header">&bull; Deets &bull;</h1>
-        <h3 class="form-header">Tell us about
-            <span class="highlight">YOU</span>, not about the letter recipient</h3>
-        <div class="underline"></div>
-        <form class="userDetails-form">
-            <div class="name form-group">
-                <input ng-model="customerData.first_name" class="userDetails-input form-control" type="text" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" name="firstName" id="firstName" required>
-            </div>
-            <div class="name">
-
-                <input ng-model="customerData.last_name" class="userDetails-input" type="text" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" name="name" id="name_input" maxlength="50">
-            </div>
-            <div class="email">
-
-                <input ng-model="customerData.email" class="userDetails-input" type="text" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" maxlength="50">
-            </div>
-
-            <div class="telephone">
-                <input ng-model="customerData.phone_number" class="userDetails-input" type="text" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" name="telephone" id="telephone_input" maxlength="20">
-            </div>
-        </form>
-        <!-- End Form -->
-    </div>
-</div>
-<!-- End #container -->
-
-<!-- Billing/Shipping Details Start -->
-<div id="userCheckout" class="container">
-    <div class="row">
-        <form class="form-horizontal">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-                <div id="container">
-                    <h1 class="form-header">&bull; Delivery/Shipping &bull;</h1><br>
-                    <h3 class="form-header">Where should
-                        <span class="highlight">Santa</span>
-                        send the
-                        <span class="highlight">letter</span>?</h3>
-                    <div class="underline"></div>
-                    <div class="userDetails-form">
-                        <div class="address">
-
-                            <input ng-model="customerData.mailing_adress1" class="userDetails-input" type="text" placeholder="Mailing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mailing Address 1'" name="address1" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.mailing_adress2" class="userDetails-input" type="text" placeholder="Mailing Address 2 (Apt, Ste, Lot, etc.)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mailing Address 2 (Apt, Ste, Lot, etc.)'" name="address2" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.mailing_city" class="userDetails-input" type="text" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" name="city" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.mailing_state" class="userDetails-input" type="text" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'" name="" id="address_input"/>
-                        </div>
-                        <div class="zip">
-
-                            <input ng-model="customerData.mailing_zip" class="userDetails-input" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                <div id="container">
-                    <h1 class="form-header">&bull; Billing &bull;</h1><br>
-                    <h3 class="form-header">Where should
-                        <span class="highlight">Santa</span>
-                        send the
-                        <span class="highlight">bill</span>?</h3>
-                    <div class="underline"></div>
-                    <div class="userDetails-form">
-                        <div class="address">
-
-                            <input ng-model="customerData.billing_adress1" class="userDetails-input" type="text" placeholder="Billing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 1'" name="address1" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.billing_adress2" class="userDetails-input" type="text" placeholder="Billing Address 2 (Apt, Ste, Lot, etc.)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 2 (Apt, Ste, Lot, etc.)'" name="address2" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.billing_city" class="userDetails-input" type="text" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" name="city" id="address_input"/>
-                        </div>
-                        <div class="address">
-
-                            <input ng-model="customerData.billing_state" class="userDetails-input" type="text" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'" name="" id="address_input"/>
-                        </div>
-                        <div class="zip">
-
-                            <input ng-model="customerData.billing_zip" class="userDetails-input" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input"/>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- End Form for Billing/Shipping -->
-        </div>
-    </div>
-    <!-- End Row -->
-</div>
-<!-- End #container -->
-<!-- Billing/Shipping Details End -->
-
-<!-- TODO display package data details from packageData if possible -->
-<!-- TODO Show the subtotal and total, tax if needed -->
-<!--Order Details Start-->
-<div class="row">
+<div id="userCheckout-header">
     <div class="container">
-        <div class="panel order-deets">
-            <div class="panel-body">
-                <h1 class="form-header">&bull; Order Deets &bull;</h1>
-                <div class="underline"></div>
-                <div class="icon_wrapper"></div>
-                <div class="form-group"><hr/></div>
-                <div class="form-group">
-                    <div class="col-sm-3 col-xs-3">
-                        <img class="img-responsive" ng-src="{{packageData.product.product_image}}"/>
-                    </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <div class="col-xs-12">{{packageData.product_name}}</div>
-                    </div>
-                    <div class="col-sm-3 col-xs-3 text-right">
-                        <h6>{{packageData.product_price | currency}}</h6>
-                    </div>
-                </div>
-                <div class="form-group"><hr/></div>
-                <div class="form-group">
-                    <div class="col-xs-12">
-                        <strong>Subtotal</strong>
-                        <div class="pull-right">
-                            <span>$$subtotal</span>
+        <div class="row letter-workshop-header text-center">
+            <div class="col-xs-12">
+                <h2>Order Details
+                    <span class="highlight">&amp;</span>
+                    Checkout</h2>
+                <p>Confirm Your Package Selection &amp; Fill Out The Information Below To Finalize Your Purchase.</p>
+                <hr>
+            </div>
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+<!-- User Checkout Header End -->
+
+<!-- Order Details and Customer Data Form 1 Start -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel order-deets">
+                <div class="panel-body">
+                    <h1 class="form-header">&bull; Order Deets &bull;</h1>
+                    <div class="underline"></div>
+                    <div class="icon_wrapper"></div>
+                    <div class="form-group"><hr/></div>
+                    <div class="form-group">
+                      <!-- TODO display package data details from packageData if possible -->
+                      <!-- TODO Show the subtotal and total, tax if needed -->
+                        <div class="col-sm-3 col-xs-3">
+                            <img class="img-responsive" ng-src="{{packageData.product.product_image}}"/>
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <div class="col-xs-12">{{packageData.product_name}}</div>
+                        </div>
+                        <div class="col-sm-3 col-xs-3 text-right">
+                            <h6>{{packageData.product_price | currency}}</h6>
                         </div>
                     </div>
-                    <div class="col-xs-12">
-                        <small>Tax</small>
-                        <div class="pull-right">
-                            <span>TaxCalc$$</span>
+                    <div class="form-group"><hr/></div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <strong>Subtotal</strong>
+                            <div class="pull-right">
+                                <span>$$subtotal</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <small>Tax</small>
+                            <div class="pull-right">
+                                <span>TaxCalc$$</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group"><hr/></div>
-                <div class="form-group">
-                    <div class="col-xs-12">
-                        <strong>Order Total</strong>
-                        <div class="pull-right">
-                            <span>Total$$</span>
+                    <div class="form-group"><hr/></div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <strong>Order Total</strong>
+                            <div class="pull-right">
+                                <span>Total$$</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--Order Details End-->
+
+        <!-- Customer Data Form 1 Name/Email/Phone Start -->
+        <div class="col-lg-6">
+            <div id="container">
+                <h1 class="form-header">&bull; Your Deets &bull;</h1>
+                <h3 class="form-header">Tell us about
+                    <span class="highlight">YOU</span>, not about the letter recipient</h3>
+                <div class="underline"></div>
+                <form class="userDetails-form form-horizontal">
+                    <div class="form-group">
+                        <input ng-model="customerData.first_name" type="text" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" name="firstName" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="customerData.last_name" type="text" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" name="name" id="name_input" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="customerData.email" type="text" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="customerData.phone_number" type="text" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" name="telephone" id="telephone_input" maxlength="20">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Customer Data Form 1 Name/Email/Phone End -->
+    </div>
+    <!--Row End-->
+</div>
+<!--Container End-->
+
+<!-- Customer Data Form 2 Billing/Shipping Details Start -->
+<div class="bill-ship-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <form>
+                <div class="col-lg-6">
+                    <div id="container">
+                        <h1 class="form-header">&bull; Delivery/Shipping &bull;</h1><br>
+                        <h3 class="form-header">Where should
+                            <span class="highlight">Santa</span>
+                            send the
+                            <span class="highlight">letter</span>?</h3>
+                        <div class="underline"></div>
+                        <div class="userDetails-form">
+                            <div class="address">
+
+                                <input ng-model="customerData.mailing_adress1" type="text" placeholder="Mailing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mailing Address 1'" name="address1" id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input
+                                    ng-model="customerData.mailing_adress2"
+                                    type="text"
+                                    placeholder="Mailing Address 2 (Apt, Ste, Lot, etc.)"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Mailing Address 2 (Apt, Ste, Lot, etc.)'"
+                                    name="address2"
+                                    id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input ng-model="customerData.mailing_city" type="text" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" name="city" id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input ng-model="customerData.mailing_state" type="text" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'" name="" id="address_input"/>
+                            </div>
+                            <div class="zip">
+
+                                <input ng-model="customerData.mailing_zip" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div id="container">
+                        <h1 class="form-header">&bull; Billing &bull;</h1><br>
+                        <h3 class="form-header">Where should
+                            <span class="highlight">Santa</span>
+                            send the
+                            <span class="highlight">bill</span>?</h3>
+                        <div class="underline"></div>
+                        <div class="userDetails-form">
+                            <div class="address">
+
+                                <input ng-model="customerData.billing_adress1" type="text" placeholder="Billing Address 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Address 1'" name="address1" id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input
+                                    ng-model="customerData.billing_adress2"
+                                    type="text"
+                                    placeholder="Billing Address 2 (Apt, Ste, Lot, etc.)"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Billing Address 2 (Apt, Ste, Lot, etc.)'"
+                                    name="address2"
+                                    id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input ng-model="customerData.billing_city" type="text" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" name="city" id="address_input"/>
+                            </div>
+                            <div class="address">
+
+                                <input ng-model="customerData.billing_state" type="text" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'" name="" id="address_input"/>
+                            </div>
+                            <div class="zip">
+
+                                <input ng-model="customerData.billing_zip" type="text" placeholder="Zip Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Zip Code'" name="country" id="telephone_input"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- Customer Data Form 2 Billing/Shipping Details End -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+</div>
+<!-- End Container -->
+
+<!-- Credit Card Form Start -->
+<div class="container">
+  <div class="row">
+
         <button ui-sref="userCheckout" class="approval-button red btn-block btn" type="submit">
             <span>Back To Letter Approval</span>
             <i class="ionicons ion-arrow-left-a"></i>
@@ -166,36 +206,14 @@
             <span>Checkout</span>
             <i class="ionicons ion-cash"></i>
         </button>
-
-
-        <!-- <form action="#"
-          name="cardForm"
-          data-card
-          data-width="500"
-          data-card-container="#card-container"
-          data-placeholders="cardPlaceholders"
-          data-options="cardOptions"
-          data-messages="cardMessages"
-          >
-
-          <div>
-              <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
-
-              <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
-          </div>
-          <div>
-              <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
-
-              <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
-
-              <input type="button" value="Change card" data-ng-click="changeCard()" />
-              <input type="button" value="Clear" data-ng-click="clear()" />
-          </div>
-
-        </form>
-
-        <div id="card-container"></div> -->
     </div>
+    <!-- End Row -->
 </div>
-<!-- End Row -->
-<!--Order Details End-->
+<!-- Container End -->
+<!-- Credit Card Form End -->
+
+
+<!--NOTE: Remove these for production-->
+<pre>{{letterData}}</pre>
+<pre>{{order}}</pre>
+<pre>{{customerData}}</pre>

@@ -5,11 +5,13 @@
 <div id="products">
     <div class="container">
         <div class="row letter-workshop-header text-center">
-            <h2>Welcome To
-                <span class="highlight">Santa's</span>
-                Letter Workshop!</h2>
-            <p>Pick a letter package &amp; personalize your letter below.</p>
-            <hr>
+            <div class="col-xs-12">
+              <h2>Welcome to
+                  <span class="highlight">Santa's</span>
+                  Letter Workshop!</h2>
+              <p>Select Your Letter Package</p>
+              <hr>
+          </div>
         </div>
 
         <div class="row product-chooser">
@@ -19,7 +21,7 @@
                     <div>
                         <span class="title">{{product.product_name}}</span>
                         <span class="description">{{product.product_desc}}</span>
-                        <button class="btn btn-success" ng-click="savePackageData({packageData: product}); activeProduct($index)">Select Package</button>
+                        <button href="#letter-workshop" du-smooth-scroll du-scrollspy class="btn btn-success" ng-click="savePackageData({packageData: product}); activeProduct($index)">Select</button>
                     </div>
                 </div>
             </div>
@@ -28,18 +30,20 @@
 </div>
 <!--List Product Section End-->
 
-<div id=letter-workshop>
+<div id="letter-workshop">
+  <div class="container-fluid">
+
     <div class="row letter-workshop-header text-center">
-        <h2>Watch
+      <div class="col-xs-12">
+        <h2>Watch as
             <span class="highlight">Santa</span>
-            Write your letter right before your eyes!</h2>
-        <p>Fill out the form &amp; watch as your letter gets personalized.</p>
+            Writes your letter right before your eyes!</h2>
+        <p>Personalize Your Letter By Filling Out The Form</p>
         <hr>
+      </div>
     </div>
 
     <div class="row">
-        <div class="container-fluid">
-            <!-- TODO Style the paragraphs in the letter.-->
             <div class="col-lg-6 visible-lg-block" id="personalized-letter">
                 <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
                 <div class="personalized-content-wrapper">
@@ -85,7 +89,6 @@
                     <form name="letterDetails">
                         <div class="userDetails-form">
 
-
                             <input ng-model="letterData.childName" type="text" placeholder="ChildName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
                             <div class="form-group">
@@ -128,9 +131,13 @@
                     <i class="ionicons ion-arrow-right-a"></i>
                 </button>
             </div>
-        </div>
     </div>
+  </div>
 </div>
+
+<!--NOTE: Remove these for production-->
+<pre>{{letterData}}</pre>
+<pre>{{order}}</pre>
 
 
 <!-- This code can be used for a later date. This shows letterhead types and when the user clicks it, the letterhead behind the form changes. I am going to use just a traditional form for now instead -->

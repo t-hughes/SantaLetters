@@ -1,11 +1,11 @@
-app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, cartSrv) {
+app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv) {
 
 //NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
-  // $scope.current = 'scLetterHead';
+// $scope.current = 'scLetterHead';
 
-/////////////
-// Products//
-////////////
+///////////////
+///Products///
+//////////////
   $scope.getProduct = letterCreateSrv.getProduct($state.params.id)
       .then(function(response) {
         $scope.productID = response.data;
@@ -21,6 +21,9 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
       $scope.isSelected = index;
   };
 
+  //Angular Anchor Scroll to letter create after selecting package
+
+
 
 //User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
 
@@ -32,22 +35,33 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
 
 // Order data
 
-$scope.order = $scope.getOrderData;
 $scope.getOrderData = function() {
+  console.log('FETCHING ORDER DATA FROM SERVICE...');
   $scope.order = letterCreateSrv.getOrderData();
-  // $scope.order[1] = $scope.letterData;
+
+  if($scope.order[1] != null) {
+    console.log('letterData:', $scope.order[1]);
+    $scope.letterData = $scope.order[1].letterData;
+  }
+  if($scope.order[2] != null) {
+    console.log('customerData:', $scope.order[2]);
+    $scope.customerData = $scope.order[2].customerData;
+  }
+
 };
 
 $scope.savePackageData = function(data) {
-  console.log(data);
+  console.log('SENDING PACKAGE DATA TO SERVICE...', data);
   letterCreateSrv.savePackageData(data);
 };
 
 
 $scope.saveOrderData = function(data) {
-  console.log(data);
+  console.log('SENDING ORDER DATA TO SERVICE...', data);
   letterCreateSrv.saveOrderData(data);
 };
+
+$scope.getOrderData();
 
 
 ////////////////////////////////
@@ -90,7 +104,6 @@ $scope.selectBehaviorFilter = [
   {id: 4, name: "Grandma", behavior: "Grandma"},
   {id: 5, name: "Grandpa", behavior: "Grandpa"},
   {id: 6, name: "Grandma & Grandpa", behavior: "Grandma & Grandpa"},
-  // {id: 7, name: "", behavior: ""} TODO can I allow user to input their own title if they are a guardian?
 ];
 
 $scope.selectPrefixFilter = [

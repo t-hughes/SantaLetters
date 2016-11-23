@@ -5,7 +5,7 @@
 #snow {
 margin-top: -82px;
 fill: #FFF;
-stroke: #fff;
+stroke: #FFF;
 }
 
 html {
@@ -155,11 +155,6 @@ p {
   letter-spacing: 0.5px;
 }
 
-.home-santa {
-    float: right;
-    margin-top: -390px;
-}
-
 /* Overview Section */
 #overview {
     text-align: center;
@@ -257,9 +252,9 @@ button.home-button:before {
   transition-delay: 0.15s;
 }
 
-button.home-button:hover.red,
-button.home-button.hover.red {
-  color: #5CB85C;
+button.home-button:hover.blue,
+button.home-button.hover.blue {
+  color: #5994F7;
 }
 
 button.home-button:hover span,
@@ -302,10 +297,6 @@ button.home-button:active:before {
   border-radius: 4px;
 }
 
-.userDetails-input {
-  line-height: normal;
-}
-
 .userDetails-form {
   padding: 37.5px;
   margin: 25px 0;
@@ -343,14 +334,6 @@ input[type='text']:focus, [type='email']:focus, select:focus {
 	padding: 0 0 0.875em 0;
 }
 
-.name, .address {
-  width: 100%;
-}
-
-.telephone, .zip{
-	float: left;
-	width: 45%;
-}
 
 ::-webkit-input-placeholder {
 	color: #474544;
@@ -475,10 +458,9 @@ button.userDetails-button:active:before {
   padding-bottom: 50px;
 }
 
-/*/////////////*/
 /*///Products///*/
 #products {
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 #products hr {
@@ -508,7 +490,6 @@ button.userDetails-button:active:before {
 
 .product-chooser-item.selected-product {
   border: 4px solid #D9534F;
-  background: #efefef;
   padding: 8px;
   filter: alpha(opacity=100);
   opacity: 1;
@@ -551,13 +532,13 @@ button.userDetails-button:active:before {
 
 .letter-workshop-header {
   padding-bottom: 15px;
-  margin-top: 10px
+  margin-top: 35px
 }
 
 /*Santa Question Form*/
 #santaQ-container {
   border: solid 3px #474544;
-  margin-top: 50px;
+  margin-top: 30px;
   box-shadow: 5px 5px 5px #888888;
 }
 
@@ -586,7 +567,7 @@ select::-ms-expand {
 }
 
 #personalized-letter {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .personalized-content-wrapper {
@@ -696,7 +677,7 @@ button.letterCreate-button:active:before {
 
 #letter-approval {
   width: 850px;
-  margin-top: 90px;
+  padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -716,8 +697,8 @@ button.letterCreate-button:active:before {
 .approval-content-wrapper {
   position: absolute;
   z-index: 10;
-  top: 33%;
-  padding: 0 29% 0 2%;
+  top: 20%;
+  padding: 0 5% 0 5%;
 }
 
 button.approval-button {
@@ -813,8 +794,17 @@ button.approval-button:active:before {
 /*//////////////////////*/
 /*////CHECKOUT VIEW////*/
 /*////////////////////*/
-#userCheckout {
-  padding-top: 30px;
+#userCheckout-header {
+  padding-top: 10px;
+}
+
+#userCheckout-header hr{
+  width: 100px;
+  border-bottom: 4px solid #EEE;
+}
+
+.bill-ship-wrapper {
+  padding-top: 25px;
 }
 
 .userCheckout-input {
@@ -825,7 +815,6 @@ button.approval-button:active:before {
 .order-deets {
   border: solid 3px #474544;
   box-shadow: 5px 5px 5px #888888;
-  margin-top: 25px;
 }
 
 
