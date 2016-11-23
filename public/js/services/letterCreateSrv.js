@@ -50,7 +50,7 @@ return order;
 
 this.saveOrderData = function(data) {
   order.push(data);
-  console.log(order);
+  console.log('SAVED TO SERVICE...', order);
 };
 
 });
