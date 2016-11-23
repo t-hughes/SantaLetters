@@ -716,8 +716,8 @@ button.letterCreate-button:active:before {
 .approval-content-wrapper {
   position: absolute;
   z-index: 10;
-  top: 33%;
-  padding: 0 29% 0 2%;
+  top: 20%;
+  padding: 0 5% 0 5%;
 }
 
 button.approval-button {

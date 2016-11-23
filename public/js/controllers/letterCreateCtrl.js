@@ -1,7 +1,7 @@
 app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, cartSrv) {
 
 //NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
-  // $scope.current = 'scLetterHead';
+// $scope.current = 'scLetterHead';
 
 /////////////
 // Products//
@@ -32,10 +32,19 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv, car
 
 // Order data
 
-$scope.order = $scope.getOrderData;
 $scope.getOrderData = function() {
+  console.log('Fetching order data from service...');
   $scope.order = letterCreateSrv.getOrderData();
-  // $scope.order[1] = $scope.letterData;
+
+  if ($scope.order[0] != null) {
+    console.log('letterData:', $scope.order[0]);
+    $scope.letterData = $scope.order[0].letterData;
+  }
+  if ($scope.order[1] != null) {
+    console.log('customerData:', $scope.order[1]);
+    $scope.customerData = $scope.order[1].customerData;
+  }
+
 };
 
 $scope.savePackageData = function(data) {
@@ -43,11 +52,21 @@ $scope.savePackageData = function(data) {
   letterCreateSrv.savePackageData(data);
 };
 
-
 $scope.saveOrderData = function(data) {
-  console.log(data);
+  console.log('SENDING TO SERVICE....', data);
   letterCreateSrv.saveOrderData(data);
 };
+
+
+$scope.getOrderData();
+
+/*
+  NOTE:
+  You needed to invoke this function for it start doing it's thing.
+  Since you are assigning the result to $scope.order inside the function
+  then you do not need to assign it here. Simply invoke it.
+*/
+
 
 
 ////////////////////////////////

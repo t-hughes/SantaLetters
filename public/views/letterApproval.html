@@ -1,55 +1,61 @@
 <!-- Ornament Header -->
 <div ng-include="'views/ornamentTemp.html'"></div>
 <!-- TODO Need to get the data that is stored in the letterCreateSrv to display on the letter overview. Do i need to combine these in order to do the print PDF thing? NOTE ask Gunnar. -->
-<div id="letter-approval">
-    <div class="row letter-workshop-header text-center">
+<div class="container">
+  <div id="letter-approval" class="row letter-workshop-header text-center">
+    <div class="col-xs-12">
         <h2>Does
             <span class="highlight">Santa's</span>
             letter get your approval?</h2>
         <p>Please look over your letter carefully before santa gets it in the mail!</p>
         <hr>
     </div>
-    <div id="letter-overview">
-        <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
-        <div class="container">
-            <div class="approval-content-wrapper">
-                <p>Dear
-                    {{childName}},</p>
+  </div>
+  <div id="letter-overview" class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
+          <div class="approval-content-wrapper">
+              <p>Dear
+                  {{letterData.childName}},</p>
 
-                <p>Ho, Ho, Ho, Merry Christmas!
-                    {{ageToShow}}</p>
+              <p>Ho, Ho, Ho, Merry Christmas!
+                  {{letterData.ageToShow.name}}</p>
 
-                <p>Your
-                    {{behaviorToShow}}
-                    told me you’ve been a very good
-                    {{genderToShow}}
-                    this year, and that you would like
-                    {{prefixToShow}}
-                    {{presentType}}
-                    for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+              <p>Your
+                  {{letterData.behaviorToShow.name}}
+                  told me you’ve been a very good
+                  {{letterData.genderToShow.name}}
+                  this year, and that you would like
+                  {{letterData.prefixToShow.name}}
+                  {{letterData.presentType}}
+                  for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
 
-                <p>{{childName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
-                    {{friendToShow}},
-                    {{friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
-                    {{friendName}}
-                    will be delighted with it on Christmas morning!</p>
+              <p>{{letterData.childName.name}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
+                  {{letterData.friendToShow.name}},
+                  {{letterData.friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
+                  {{letterData.friendName}}
+                  will be delighted with it on Christmas morning!</p>
 
-                <p>{{paragraphToShow}}</p>
+              <p>{{letterData.paragraphToShow.name}}</p>
 
-                <p>{{childName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
+              <p>{{letterData.childName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
 
-                <p>Merry Christmas!<br>
-                    Love,<br>
-                    Santa Claus</p>
-            </div>
-        </div>
-        <button ui-sref="letterCreate" class="approval-button red btn-block btn" type="submit">
-            <span>Back To Package Select &amp; Letter Creation</span>
-            <i class="ionicons ion-arrow-left-a"></i>
-        </button>
-        <button ui-sref="userCheckout" class="approval-button red btn-block btn" type="submit">
-            <span>To Order Details &amp; Checkout</span>
-            <i class="ionicons ion-android-cart"></i>
-        </button>
-    </div>
+              <p>Merry Christmas!<br>
+                  Love,<br>
+                  Santa Claus</p>
+          </div>
+      <button ui-sref="letterCreate" class="approval-button red btn-block btn" type="submit">
+          <span>Back To Package Select &amp; Letter Creation</span>
+          <i class="ionicons ion-arrow-left-a"></i>
+      </button>
+      <button ui-sref="userCheckout" class="approval-button red btn-block btn" type="submit">
+          <span>To Order Details &amp; Checkout</span>
+          <i class="ionicons ion-android-cart"></i>
+      </button>
+  </div>
 </div>
+</div>
+
+<!--NOTE: Remove these for production-->
+<pre>{{letterData}}</pre>
+<pre>{{order}}</pre>

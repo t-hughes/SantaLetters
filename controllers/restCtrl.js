@@ -1,5 +1,9 @@
+/*jshint esversion: 6 */
+
 let db = require('./../db');
-let app = require('./../server');
+
+//NOTE: Not using app anywhere, also you aren't exporting app from server.js
+// let app = require('./../server');
 
 module.exports = {
 
