@@ -21,8 +21,6 @@ app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv) {
       $scope.isSelected = index;
   };
 
-  //Angular Anchor Scroll to letter create after selecting package
-
 
 
 //User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
