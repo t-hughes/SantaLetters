@@ -325,7 +325,6 @@ input[type='text'], [type='email'], select {
   letter-spacing: 1px;
 	margin: 0em 0 1.875em 0;
 	padding: 0 0 0.875em 0.417em;
-  text-transform: uppercase;
 	width: 100%;
 }
 
@@ -445,9 +444,6 @@ button.userDetails-button:active:before {
 /*///////////////////////*/
 /*///LETTER CREATE VIEW///*/
 /*//////////////////////*/
-/*#letterCreate {
-  padding-top: 100px;
-}*/
 
 #letter-workshop hr {
   width: 100px;
@@ -458,7 +454,7 @@ button.userDetails-button:active:before {
   padding-bottom: 50px;
 }
 
-/*///Products///*/
+/*///PRODUCTS///*/
 #products {
   padding-top: 10px;
 }
@@ -468,7 +464,7 @@ button.userDetails-button:active:before {
   border-bottom: 4px solid #EEE;
 }
 
-/*Letter Package List*/
+/*LETTER PACKAGE LIST*/
 .clear
 {
     clear: both;
@@ -535,7 +531,71 @@ button.userDetails-button:active:before {
   margin-top: 35px
 }
 
-/*Santa Question Form*/
+/*/////TEMPLATE SELECTION////*/
+/* Letter Templates Panel - Tabs*/
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+}
+
+/* Panel */
+.tab-btn {
+  background-color: transparent;
+  border: none;
+}
+.tab-btn:focus {
+outline: 0;
+}
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+/*///Santa Question Form///*/
 #santaQ-container {
   border: solid 3px #474544;
   margin-top: 30px;

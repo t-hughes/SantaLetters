@@ -44,8 +44,118 @@
     </div>
 
     <div class="row">
-            <div class="col-lg-6 visible-lg-block" id="personalized-letter">
-                <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
+            <div class="col-lg-6" id="personalized-letter">
+              <div class="tabbable-panel">
+  <div class="tabbable-line">
+    <ul class="nav nav-tabs ">
+      <li class="active">
+        <button class="tab-btn" href="#tab_1" data-toggle="tab">
+        Template 1 </button>
+      </li>
+      <li>
+        <button class="tab-btn" href="#tab_2" data-toggle="tab">
+        Template 2 </button>
+      </li>
+      <li>
+        <button class="tab-btn" href="#tab_3" data-toggle="tab">
+        Template 3 </button>
+      </li>
+      <li>
+        <button class="tab-btn" href="#tab_4" data-toggle="tab">
+        Template 4 </button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_1">
+        <p style="text-align: center">
+          Template 1
+        </p>
+        <p>
+          <p>Dear
+              {{letterData.childName}},</p>
+
+          <p>Ho, Ho, Ho, Merry Christmas!
+              {{letterData.ageToShow.list}}</p>
+
+          <p>Your
+              {{letterData.behaviorToShow.behavior}}
+              told me you’ve been a very good
+              {{letterData.genderToShow.gender}}
+              this year, and that you would like
+              {{letterData.prefixToShow.prefix}}
+              {{letterData.presentType}}
+              for Christmas. Well, I can’t promise every child will get what they ask for, but I can assure you, you’ll have a wonderful Christmas with your kind, loving family.</p>
+
+          <p>{{letterData.childName}}, I was walking through the toy workshop earlier today, when I saw The Elves wrapping a present for your
+              {{letterData.friendToShow.friend}},
+              {{letterData.friendName}}. I can’t tell you what I saw them wrapping because it will spoil the surprise but I can guarantee that
+              {{letterData.friendName}}
+              will be delighted with it on Christmas morning!</p>
+
+          <p>{{letterData.paragraphToShow.para}}</p>
+
+          <p>{{letterData.childName}}, make sure you get to bed nice and early on Christmas Eve because Rudolph just showed me the route we’ll be flying, and guess where we’ll be coming? That’s right, to your house!</p>
+
+          <p>Merry Christmas!<br>
+              Love,<br>
+              Santa Claus</p>
+        </p>
+      </div>
+      <div class="tab-pane" id="tab_2">
+        <p style="text-align: center">
+          Template 2
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+        </p>
+        <p>
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+        </p>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+        </p>
+      </div>
+      <div class="tab-pane" id="tab_3">
+        <p style="text-align: center">
+          Template 3
+        </p>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+        </p>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+        </p>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+        </p>
+        <p>
+          Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+        </p>
+      </div>
+      <div class="tab-pane" id="tab_4">
+        <p style="text-align: center">
+          Template 4
+        </p>
+        <p>
+          Nihil kitsch sartorial, chambray quinoa af deep v gastropub banh mi velit whatever irony direct trade kale chips brunch. Portland synth kinfolk, iceland yuccie chillwave 3 wolf moon copper mug duis butcher. Letterpress elit assumenda fap, iPhone selvage tattooed veniam small batch quinoa direct trade pitchfork.
+        </p>
+        <p>
+          Nihil kitsch sartorial, chambray quinoa af deep v gastropub banh mi velit whatever irony direct trade kale chips brunch. Portland synth kinfolk, iceland yuccie chillwave 3 wolf moon copper mug duis butcher. Letterpress elit assumenda fap, iPhone selvage tattooed veniam small batch quinoa direct trade pitchfork.
+        </p>
+        <p>
+          Nihil kitsch sartorial, chambray quinoa af deep v gastropub banh mi velit whatever irony direct trade kale chips brunch. Portland synth kinfolk, iceland yuccie chillwave 3 wolf moon copper mug duis butcher. Letterpress elit assumenda fap, iPhone selvage tattooed veniam small batch quinoa direct trade pitchfork.
+        </p>
+        <p>
+          VHS cred anim master cleanse photo booth quinoa authentic viral. Portland raclette lumbersexual coloring book, literally consequat flexitarian  veniam chicharrones wolf nostrud.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+                <!-- <img class="img-responsive img-shadow" ng-src="img/scLetterHead.jpg"/>
                 <div class="personalized-content-wrapper">
 
                     <p>Dear
@@ -76,7 +186,7 @@
                     <p>Merry Christmas!<br>
                         Love,<br>
                         Santa Claus</p>
-                </div>
+                </div> -->
             </div>
 
             <div class="col-lg-6">
@@ -89,7 +199,7 @@
                     <form name="letterDetails">
                         <div class="userDetails-form">
 
-                            <input ng-model="letterData.childName" type="text" placeholder="ChildName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
+                            <input ng-model="letterData.childName" type="text" placeholder="Childs First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs First Name'" name="field_child_name">
 
                             <div class="form-group">
                                 <select ng-options="item.name for item in selectAgeFilter" ng-model="letterData.ageToShow" name="field_age" class="field-input-age">
@@ -116,7 +226,7 @@
                                 <select ng-options="item.name for item in selectFriendFilter" ng-model="letterData.friendToShow" name="friend_type" class="field-select">
                                     <option value="" selected hidden disabled>---</option>
                                 </select>
-                                <input ng-model="letterData.friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling,teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling,teacher name'" name="">
+                                <input ng-model="letterData.friendName" class="field-input" type="text" placeholder="Childs friend, pet, sibling, or teacher name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Childs friend, pet, sibling, or teacher name'" name="">
                             </div>
 
                             <select ng-options="item.name for item in selectEventFilter" name="event" ng-model="letterData.paragraphToShow">
