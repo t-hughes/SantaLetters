@@ -562,7 +562,7 @@ outline: 0;
   color: #a6a6a6;
 }
 .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
-  border-bottom: 4px solid #fbcdcf;
+  border-bottom: 4px solid #FBCDCF;
 }
 .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
   border: 0;
@@ -570,11 +570,11 @@ outline: 0;
   color: #333333;
 }
 .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
-  color: #a6a6a6;
+  color: #A6A6A6;
 }
 
 .tabbable-line > .nav-tabs > li.active {
-  border-bottom: 4px solid #f3565d;
+  border-bottom: 4px solid #D9534F;
   position: relative;
 }
 .tabbable-line > .nav-tabs > li.active > a {
@@ -586,9 +586,9 @@ outline: 0;
 }
 .tabbable-line > .tab-content {
   margin-top: -3px;
-  background-color: #fff;
+  background-color: #FFF;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #EEE;
   padding: 15px 0;
 }
 .portlet .tabbable-line > .tab-content {
