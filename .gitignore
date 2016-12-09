@@ -1,7 +1,5 @@
 node_modules/
 config.js
 tableOutlines.sql
-public/dist/bundle.js
 npm-debug.log
-bootstrap-validator/
 ecommerce_public_products.txt
