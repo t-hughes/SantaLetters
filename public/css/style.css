@@ -849,6 +849,13 @@ button.approval-button:active:before {
   background: rgba(255, 255, 255, 0.7);
 }
 
+/*//////////////////////*/
+/*////STORE VIEW////*/
+/*////////////////////*/
+
+#store {
+    padding-top: 100px;
+}
 
 
 /*//////////////////////*/
