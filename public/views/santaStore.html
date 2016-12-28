@@ -1,0 +1,29 @@
+<div class="container">
+        <div class="row">
+            <h1 class="text-center">Pick Your Produce Packages</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="product in products">
+                <div class="product-item">
+                    <div class="pi-img-wrapper">
+                        <!-- <img src="http://www.freefoodphotos.com/imagelibrary/herbs/slides/chilis.jpg" class="img-responsive" alt=""> -->
+                        <img class="img-responsive" ng-src="{{ product.product_image }}" alt=""/>
+                        <div>
+                            <button class="btn" ui-sref="productDetails({id: product.product_id})">View</button>
+                        </div>
+                    </div>
+                    <h3>{{ product.product_name }}</h3>
+                    <div class="pi-price">{{ product.product_price * productQty | currency }}</div>
+                    <a class="btn add2cart" ng-click="addToCart(product)">Add to cart</a>
+                </div>
+            </div>
+            <button type="button" class="btn go2-homeBtn" ui-sref="home">
+                <span class="fa fa-arrow-left"></span>
+                Return Home</button>
+            <button type="button" class="btn go2-cartBtn" ui-sref="userCart">
+                <span class="fa fa-shopping-basket"></span>
+                Go To Cart</button>
+        </div>
+    </div>

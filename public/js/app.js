@@ -23,6 +23,11 @@ app.config(function($urlRouterProvider, $stateProvider) {
         controller: 'letterCreateCtrl'
     })
 
+    .state('store', {
+        url: '/store',
+        templateUrl: 'views/santaStore.html',
+    })
+
     .state('userCheckout', {
         url: '/userCheckout',
         templateUrl: 'views/userCheckout.html',
@@ -32,6 +37,11 @@ app.config(function($urlRouterProvider, $stateProvider) {
     .state('about', {
         url: '/about',
         templateUrl: 'views/about.html'
+    })
+
+    .state('contact', {
+        url: '/contact',
+        templateUrl: 'views/contact.html'
     });
 
 });
