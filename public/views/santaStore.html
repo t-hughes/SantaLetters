@@ -1,4 +1,4 @@
-<div id="store">
+<div id="santaStore">
 
 <div class="container">
         <div class="row">
@@ -21,12 +21,14 @@
                     <a class="btn add2cart" ng-click="addToCart(product)">Add to cart</a>
                 </div>
             </div>
-            <button type="button" class="btn go2-homeBtn" ui-sref="home">
-                <span class="fa fa-arrow-left"></span>
-                Return Home</button>
-            <button type="button" class="btn go2-cartBtn" ui-sref="userCart">
-                <span class="fa fa-shopping-basket"></span>
-                Go To Cart</button>
+            <button ui-sref="home" class="approval-button red btn" type="submit">
+                <span>Home</span>
+                <i class="ionicons ion-arrow-left-a"></i>
+            </button>
+            <button ui-sref="userCheckout" class="approval-button red btn" style="float:right"type="submit">
+                <span>Checkout</span>
+                <i class="ionicons ion-android-cart"></i>
+            </button>
         </div>
     </div>
 </div>

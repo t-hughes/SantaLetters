@@ -1,0 +1,101 @@
+<div id="userCart">
+<div class="container">
+        <div class="row">
+            <h2 class="text-center">Your <span class="highlight">Cart</span></h2>
+            <h2 class="text-center" ng-if="cartQty() === 0">Oh no! There is nothing in your cart!</h2>
+            <h2 class="text-center" ng-if="cartQty() === 0">Go check out Santa's
+                <a class="highlight" ui-sref="santaStore">store!</a>
+            </h2><br/>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th class="text-center">Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cartitem in cart track by $index">
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="pull-left">
+                                        <img ng-src="{{ cartitem.product_image }}">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            {{ cartitem.product_name }}
+                                        </h4>
+                                        <p>{{ cartitem.product_desc }}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <input class="qty-input" type="number" min="0" ng-model="cartitem.productQty" ng-change="updateQty()" />
+                                x
+                            </td>
+
+                            <td class="col-sm-1 col-md-1 text-center">
+                                <strong>{{ cartitem.product_price | currency }}</strong>
+                            </td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger" ng-click="removeItem($index)">
+                                    <span class="fa fa-times"></span>
+                                    Remove
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h5>Subtotal</h5>
+                            </td>
+                            <td class="text-right">
+                                <h5>
+                                    <strong>{{ subtotal() | currency }}</strong>
+                                </h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h5>Tax</h5>
+                            </td>
+                            <td class="text-right">
+                                <h5>
+                                    <strong>{{ tax() | currency }}</strong>
+                                </h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h3>Total</h3>
+                            </td>
+                            <td class="text-right">
+                                <h3>
+                                    <strong>{{ grandtotal() | currency }}</strong>
+                                </h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button ui-sref="products" type="button" class="btn back2-productsBtn">
+                    <span class="fa fa-shopping-basket"></span>
+                    Continue Shopping
+                </button>
+
+                <button ui-sref="userCheckout" type="button" class="btn go2-checkoutBtn">
+                    Checkout
+                    <span class="fa fa-arrow-right"></span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,28 +1,5 @@
 app.controller('letterCreateCtrl', function($scope, $state, letterCreateSrv) {
 
-//NOTE Not currently using this code on letterCreate view. Changes letterhead when thumbnail is clicked on the lettterTypes view
-// $scope.current = 'scLetterHead';
-
-///////////////
-///Products///
-//////////////
-  $scope.getProduct = letterCreateSrv.getProduct($state.params.id)
-      .then(function(response) {
-        $scope.productID = response.data;
-      });
-
-      $scope.getAllProducts = letterCreateSrv.getAllProducts()
-    .then(function(response) {
-      $scope.products = response.data;
-  });
-
-//This adds the red border and gray background when the package is selected.
-  $scope.activeProduct = function(index) {
-      $scope.isSelected = index;
-  };
-
-
-
 //User Deets and Delivery Form Info Sending saved in the service until it is sent to the DB on the last step.
 
 // $scope.saveFinalCustomer = function (data){

@@ -23,9 +23,22 @@ app.config(function($urlRouterProvider, $stateProvider) {
         controller: 'letterCreateCtrl'
     })
 
-    .state('store', {
-        url: '/store',
+    .state('santaStore', {
+        url: '/santaStore',
         templateUrl: 'views/santaStore.html',
+        controller: 'santaStoreCtrl'
+    })
+
+    .state('productDetails', {
+        url: '/productDetails/:id',
+        templateUrl: 'views/productDetails.html',
+        controller: 'productDetailsCtrl'
+    })
+
+    .state('userCart', {
+        url: '/userCart',
+        templateUrl: 'views/userCart.html',
+        controller: 'userCartCtrl'
     })
 
     .state('userCheckout', {

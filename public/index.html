@@ -24,13 +24,51 @@
         <link rel="stylesheet" href="css/style.css"/>
         <title>Santa Letters</title>
     </head>
-    <body>
+    <body ng-controller="userCartCtrl">
 
         <!-- Header -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
+
+        <nav class="navbar navbar-custom navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" style="color: black" ui-sref="home">Santa
+                    <span class="logo-highlight">Letters</span>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a ui-sref="home">Home</a>
+                    </li>
+                    <li>
+                        <a ui-sref="letterCreate">Letter Workshop</a>
+                    </li>
+                    <li>
+                        <a ui-sref="santaStore">Santa's Store</a>
+                    </li>
+                    <li>
+                        <a ui-sref="about">About</a>
+                    </li>
+                    <li>
+                        <a ui-sref="contact">Contact Us</a>
+                    </li>
+                    <li><a ui-sref="userCart" aria-expanded="false"><img class="cart-img icon icons8-Sleigh" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAE50lEQVRoQ+2Y3U4bVxDHf7OASUApcBNobwIiF1FJJGhV08bQkCcIeYKQ617EeYIkUu/jPEHcJ6h5AkIBRSFSadXQ3oRCe1EB/QCrQIg/dqqz6zW28cfuOqaK5HO1LHPm/P/zn5mdY+E9X/Ke46dN4P9WsK1AW4EmI9BOoSYD2PT2tgJNh7BJB2UKbF5h2O7gngrjAjNVfStbKmyJsoWwZSnzI+v80CSO0NuLBDbHGLeFBaA/hLd9IGEd8GRkC/N8ZqtI4PUYKRFumZMF3n4Qobu3GyyBSIeLJ5MHW93nN1nI2nCcxc4pVgHxvqXcPEtFigQ2rlKABuctvvywj+/8hvE4B/+8IXecoxM4UxJVCYy+QnT6hJBfIruHcJABlC3rkIl3kU6vx7gjEEcYN37V5v7lX0h5mEoJPAQeAI9GX/EwDAHj9I9/wSji+fFLvprdxhhPEeYq/6fK3cvrJAvpXv0InXK6zKWgAAx4QwJIWwcMh1Vh42MSWNzzzu8Ucjl1UtRReHSdkUYEniHcCErA2G8fwFHWOej+6DqJoD5ejzEnwlOzzzSRwV52zp/jyq9/sef5MmneiEACOYlAEBCHGdg5LI+U3/2V4D+64HTBu7JEcuMqbprbPBn9mXh9AtPMAt/6PbjS7vd9yLl9zakpP34K36JnQJ+JfAE8dDAgz6p/X2rOQjpDP/kTyfwAKLUpqgBpzTNX2jmq+Sr9kJaBh3lZcoJZddUd5nTaqfQ7QcF79sW26hZe0rJIjvzEYqm/zWvcsG1mC93GmQJM5M+55WrWbVk6aZuVWOoTmGIGd7wIvf4+hLT5NvhYFZE3O9KyVH+0aThO6xShu5GHOZeH9DG8yUHGPs3ERLu3Cy5EwPKGEle1R7Jcv34aE/icYbqcabPPRxDfpUmaDoZrFa93UEMCTiCa7EghWdXN/UAEHBJuPZgZpPVK+EidwAQcEiadOkmG/UL7UCINzNXrOoG6UK0D9TrjdBBX6fxUNHfVB7DaJsqP5mYHpOgg1Sjn3wkBz8nzl3/O2GovgC7GokPOFdS8y2v+gSBVr6SWWDdtzc+C3AN9EosOOSNB5Vpb2+s/ymYeK8yKe0tM9nRF7k9MDJTd+HwVca3wrbzYSSHcUvimtysSP8xmHwjqAUqjJKxIxBl77UzGzFa3DFmrq3vOzmY2zXurKzLyxcSAUaBseb5LX5pzpqKDZeN1aAIrq7tzoGZiNKPCV2Lp14gMOwcqj3oikcRR9m1KTf1Hh26urO6Og64p7E9FBweWV3eSYr7ySio2OXj7FIHVHWeSMoo5AVB7wdtbahuKwPLL7bioPC44+h74xH3WRbDisehF51eKlSogDOFYdLD/+dresJ3NFL4vcjcWvego5a2V1W0z1GFSs5BOe6j+FpsccoNUWIEIFHLeAB93B009EqTHUUH04dRnQ2Wzf6M0KFHR/JRwisQJGVftwClkoqTZ3CUbnRW1Z0tSJIcUb0fzViQSr5bHTuQyGdN2TUH3ebVSWojFVHLRJhFN9XR2L3o2yy927yCaMIUsyu3rk4PF+7DZUKbA8ur2Qq3u4cRbQUp3GBkCaViZ6UH+rq5Q2fFu3olzjTwFtsa7IBBC2SrzAsnKyIeqgVAAWrzpzBKgVTzaBFoVWb9+2wr4jVSr7NoKtCqyfv22FfAbqVbZ/Qfn2OJAUEkQtwAAAABJRU5ErkJggg==" width="48" height="48"><span class="badge" ng-if="cart.length >= 1">{{cartQty()}}</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav> -->
+        <!-- <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid"> -->
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
+                <!-- <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -40,10 +78,10 @@
                     <a class="navbar-brand" style="color: black" ui-sref="home">Santa
                         <span class="logo-highlight">Letters</span>
                     </a>
-                </div>
+                </div> -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
                             <a ui-sref="home">Home</a>
@@ -52,7 +90,7 @@
                             <a ui-sref="letterCreate">Letter Workshop</a>
                         </li>
                         <li>
-                            <a ui-sref="store">Santa's Store</a>
+                            <a ui-sref="santaStore">Santa's Store</a>
                         </li>
                         <li>
                             <a ui-sref="about">About</a>
@@ -60,15 +98,16 @@
                         <li>
                             <a ui-sref="contact">Contact Us</a>
                         </li>
-                    </ul>
+
+                    </ul> -->
                     <!-- <ul class="nav navbar-nav navbar-right">
               <li class="cartimg-width"><a ui-sref="userCart" role="button" aria-expanded="false"><img class="cart-img" src="img/sledCart.png"><span class="badge" ng-if="cart.length >= 1">{{cart.length}}</span></a></li>
             </ul> -->
-                </div>
-                <!--navbar-collapse -->
+                <!-- </div>
+                navbar-collapse
             </div>
-            <!--container-fluid-->
-        </nav>
+            container-fluid
+        </nav> -->
         <!--Header End-->
         <!-- UI-View -->
         <a du-smooth-scroll="anchor"></a><main ui-view><a du-smooth-scroll="anchor"></a></main>
@@ -92,7 +131,7 @@
                     <i class="ion-social-instagram"></i>
                 </a>
             </div>
-            <hr>
+            <div><a href="https://icons8.com" style="color:transparent; float: right;">Icon pack by Icons8</a></div>
         </footer>
         <!--Footer End-->
 
@@ -112,7 +151,12 @@
         <!-- Scripts -->
         <script src="js/app.js"></script>
         <script src="js/controllers/letterCreateCtrl.js"></script>
+        <script src="js/controllers/santaStoreCtrl.js"></script>
+        <script src="js/controllers/productDetailsCtrl.js"></script>
+        <script src="js/controllers/userCartCtrl.js"></script>
         <script src="js/services/letterCreateSrv.js"></script>
+        <script src="js/services/santaStoreSrv.js"></script>
+        <script src="js/services/userCartSrv.js"></script>
 
     </body>
 </html>
